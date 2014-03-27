@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/">
+	<soapenv:Header>
+		<token:security xmlns:token="http://santander-fo">
+			<username xmlns="">fibrasil</username>
+			<key xmlns="">93874382DB99B855</key>
+			<cnpj xmlns="">14443697000180</cnpj>
+			<codigoGrupoCanal xmlns="">0011.003</codigoGrupoCanal>
+			<numeroIntermediario xmlns="">420648</numeroIntermediario>
+		</token:security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<impl:listarDominiosGerais xmlns:impl="http://santander-fo">
+			<chamada xmlns="">
+				<codigoCanal xmlns="">0008</codigoCanal>
+				<usuario xmlns="">rosani</usuario>
+				<codigoDominio xmlns="">31</codigoDominio>
+			</chamada>
+		</impl:listarDominiosGerais>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<dlwmin:listarDominiosGeraisResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/">
+			<dominiosGeraisResponse>
+				<codigoErro></codigoErro>
+				<codigoRetorno>00</codigoRetorno>
+				<descricaoErro></descricaoErro>
+				<codigoErroSistema></codigoErroSistema>
+				<descricaoErroSistema></descricaoErroSistema>
+				<indicadorRechamada>N</indicadorRechamada>
+				<dominios>
+					<opcoes>
+						<codigo>01</codigo>
+						<descricao>CARTEIRA DE IDENTIDADE</descricao>
+					</opcoes>
+					<opcoes>
+						<codigo>02</codigo>
+						<descricao>REGISTRO DE ESTRANGEIRO</descricao>
+					</opcoes>
+					<opcoes>
+						<codigo>03</codigo>
+						<descricao>PASSAPORTE</descricao>
+					</opcoes>
+					<opcoes>
+						<codigo>04</codigo>
+						<descricao>CARTEIRA PROFISSIONAL</descricao>
+					</opcoes>
+					<opcoes>
+						<codigo>05</codigo>
+						<descricao>REGISTRO DE CONSELHO DE CLASSE</descricao>
+					</opcoes>
+					<opcoes>
+						<codigo>06</codigo>
+						<descricao>REGISTRO DE MILITAR</descricao>
+					</opcoes>
+					<opcoes>
+						<codigo>07</codigo>
+						<descricao>MATRICULA EM ORGAOS PUBLICOS</descricao>
+					</opcoes>
+					<opcoes>
+						<codigo>08</codigo>
+						<descricao>INSCRICAO MUNICIPAL</descricao>
+					</opcoes>
+					<opcoes>
+						<codigo>09</codigo>
+						<descricao>INSCRICAO ESTADUAL</descricao>
+					</opcoes>
+				</dominios>
+			</dominiosGeraisResponse>
+		</dlwmin:listarDominiosGeraisResponse>
+	</soapenv:Body>
+</soapenv:Envelope>

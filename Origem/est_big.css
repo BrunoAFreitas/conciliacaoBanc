@@ -1,0 +1,43 @@
+/* CSS Document */
+TD {
+	font-size : 10px;
+	font-family : verdana;
+	font-weight : bold;
+}
+
+TD.NORMAL {
+	font-size : 10px;
+	font-family : verdana;
+	font-weight : bold;
+}
+
+FONT.NORMAL{
+	font-size : 10px;
+	font-family : verdana;
+	font-weight : normal;
+}
+
+FONT.DETALHE{
+	font-size : 10px;
+	font-family : verdana;
+	font-weight : normal;
+	color : #003399;	
+}
+
+FONT.AVISO{
+	font-size : 12px;
+	font-family : arial;
+	font-weight : bold;
+	color : '#FF0000';	
+}
+
+SELECT{
+	font-size : 12px;
+	font-family : verdana;
+	font-weight : normal;	
+}
+INPUT{
+	font-size : 12px;
+	font-family : verdana;
+	font-weight : normal;	
+}

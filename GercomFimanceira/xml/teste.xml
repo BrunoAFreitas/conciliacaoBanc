@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/">
+	<soapenv:Header>
+		<token:security xmlns:token="http://santander-fo">
+			<username xmlns="">fibrasil</username>
+			<key xmlns="">93874382DB99B855</key>
+			<cnpj xmlns="">14443697000180</cnpj>
+			<codigoGrupoCanal xmlns="">0011.003</codigoGrupoCanal>
+			<numeroIntermediario xmlns="">420648</numeroIntermediario>
+		</token:security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<impl:enviaPropostaFinanciamentoVeiculoPasso1Inicio xmlns:impl="http://santander-fo">
+			<chamada xmlns="">
+				<codigoFormaPagamento xmlns=""/>
+				<codigoModalidade xmlns=""/>
+				<dataEntregaBem xmlns=""/>
+				<codigoTipoMoeda xmlns=""/>
+				<nomeVendedor xmlns=""/>
+				<numeroIdProduto xmlns=""/>
+				<numeroQuantidadePrestacoes xmlns=""/>
+				<numeroTabelaFinanciamento xmlns=""/>
+				<numeroVendedor xmlns=""/>
+				<pacoteLiberacao xmlns=""/>
+				<textoControleLoja xmlns=""/>
+				<textoObsLoja xmlns=""/>
+				<valorBem xmlns=""/>
+				<valorEntrada xmlns=""/>
+				<valorFinanciamento xmlns=""/>
+				<valorPrestacao xmlns=""/>
+				<dataVencimento1 xmlns=""/>
+				<numeroIntermediario xmlns="">000000</numeroIntermediario>
+			</chamada>
+		</impl:enviaPropostaFinanciamentoVeiculoPasso1Inicio>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<dlwmin:enviaPropostaFinanciamentoVeiculoPasso1InicioResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/">
+			<inserePropostaResponse>
+				<codigoErro>@ERVJE0028</codigoErro>
+				<codigoRetorno>20</codigoRetorno>
+				<descricaoErro>CAMPO COD PRODUTO NAO INFORMADO</descricaoErro>
+			</inserePropostaResponse>
+		</dlwmin:enviaPropostaFinanciamentoVeiculoPasso1InicioResponse>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/">
+	<soapenv:Header>
+		<token:security xmlns:token="http://santander-fo">
+			<username xmlns="">fibrasil</username>
+			<key xmlns="">93874382DB99B855</key>
+			<cnpj xmlns="">14443697000180</cnpj>
+			<codigoGrupoCanal xmlns="">0011.003</codigoGrupoCanal>
+			<numeroIntermediario xmlns="">420648</numeroIntermediario>
+		</token:security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<impl:enviaPropostaFinanciamentoVeiculoPasso2DadosPessoais xmlns:impl="http://santander-fo">
+			<chamada xmlns="">
+				<nrProposta xmlns=""/>
+				<codigoDocumento xmlns=""/>
+				<codigoEstadoNaturalidade xmlns=""/>
+				<codigoEstadoOrgaoEmissor xmlns=""/>
+				<codigoNacionalidade xmlns=""/>
+				<codigoPaisDocumento xmlns=""/>
+				<codigoSedePropria xmlns=""/>
+				<codigoSexo xmlns=""/>
+				<codigoTipoPessoa xmlns=""/>
+				<dataAdmissao xmlns=""/>
+				<dataEmissaoDocumento xmlns=""/>
+				<dataNascimento xmlns=""/>
+				<dataValidadeDocumento xmlns=""/>
+				<descricaoNaturalidade xmlns=""/>
+				<descricaoProfissao xmlns=""/>
+				<descricaoTelOutrasRendas xmlns=""/>
+				<indicativoFuncSantander xmlns=""/>
+				<nomeCompleto xmlns=""/>
+				<nomeEmpresa xmlns=""/>
+				<nomeOrgaoEmissor xmlns=""/>
+				<nomeMae xmlns=""/>
+				<nomePai xmlns=""/>
+				<numeroCnpjEmpresa xmlns=""/>
+				<numeroComprovanteRenda xmlns=""/>
+				<numeroCpfCnpj xmlns=""/>
+				<numeroDddOutrasRendas xmlns=""/>
+				<numeroDependentes xmlns=""/>
+				<numeroEstadoCivil xmlns=""/>
+				<numeroProfissao xmlns=""/>
+				<numeroRenda xmlns=""/>
+				<numeroTipoDocumento xmlns=""/>
+				<numeoroOutrasRendas xmlns=""/>
+				<valorPatrimonio xmlns=""/>
+				<valorRendaMensal xmlns=""/>
+			</chamada>
+		</impl:enviaPropostaFinanciamentoVeiculoPasso2DadosPessoais>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<dlwmin:enviaPropostaFinanciamentoVeiculoPasso2DadosPessoaisResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/">
+			<dadosPessoaisResponse>
+				<codigoErro>@ERVJE0028</codigoErro>
+				<codigoRetorno>20</codigoRetorno>
+				<descricaoErro>CAMPO COD PROPOST ADP NAO INFORMADO</descricaoErro>
+				<dadosPessoais></dadosPessoais>
+			</dadosPessoaisResponse>
+		</dlwmin:enviaPropostaFinanciamentoVeiculoPasso2DadosPessoaisResponse>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/">
+	<soapenv:Header>
+		<token:security xmlns:token="http://santander-fo">
+			<username xmlns="">fibrasil</username>
+			<key xmlns="">93874382DB99B855</key>
+			<cnpj xmlns="">14443697000180</cnpj>
+			<codigoGrupoCanal xmlns="">0011.003</codigoGrupoCanal>
+			<numeroIntermediario xmlns="">420648</numeroIntermediario>
+		</token:security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<impl:enviaPropostaFinanciamentoVeiculoPasso3Endereco xmlns:impl="http://santander-fo">
+			<chamada xmlns="">
+				<numeroPropostaAdp xmlns=""/>
+				<numeroClienteInterno xmlns=""/>
+				<codigoPaisComercial xmlns=""/>
+				<codigoPaisResidencial xmlns=""/>
+				<codigoSiglaUfComercial xmlns=""/>
+				<codigoSiglaUfResidencial xmlns=""/>
+				<codigoCel xmlns=""/>
+				<dataAnoResideDesde xmlns=""/>
+				<dataMesResideDesde xmlns=""/>
+				<descricaoComplementoEndComercial xmlns=""/>
+				<descricaoComplementoResidencia xmlns=""/>
+				<descricaoEnderecoComercial xmlns=""/>
+				<descricaoEnderecoResidencia xmlns=""/>
+				<descricaoEnderecoEmail xmlns=""/>
+				<descricaoTelComercial xmlns=""/>
+				<descricaotelResidencial xmlns=""/>
+				<nomeBairroComercial xmlns=""/>
+				<nomeBairroResidencial xmlns=""/>
+				<nomeCidadeComercial xmlns=""/>
+				<nomeCidadeResidencial xmlns=""/>
+				<numeroCepComercial xmlns=""/>
+				<numeroCepResidencial xmlns=""/>
+				<numeroDddCel xmlns=""/>
+				<numeroDddResidencial xmlns=""/>
+				<numeroDddTelComercial xmlns=""/>
+				<numeroEnderecoComercial xmlns=""/>
+				<numeroResidencial xmlns=""/>
+				<numeroTipoResidencia xmlns=""/>
+				<numeroTipoTelefResiden xmlns=""/>
+			</chamada>
+		</impl:enviaPropostaFinanciamentoVeiculoPasso3Endereco>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<dlwmin:enviaPropostaFinanciamentoVeiculoPasso3EnderecoResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/">
+			<insereEnderecoResponse>
+				<codigoErro>@ERVJE0046</codigoErro>
+				<codigoRetorno>20</codigoRetorno>
+				<descricaoErro>CAMPO COD PROPROS ADP INVALIDO</descricaoErro>
+			</insereEnderecoResponse>
+		</dlwmin:enviaPropostaFinanciamentoVeiculoPasso3EnderecoResponse>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/">
+	<soapenv:Header>
+		<token:security xmlns:token="http://santander-fo">
+			<username xmlns="">fibrasil</username>
+			<key xmlns="">93874382DB99B855</key>
+			<cnpj xmlns="">14443697000180</cnpj>
+			<codigoGrupoCanal xmlns="">0011.003</codigoGrupoCanal>
+			<numeroIntermediario xmlns="">420648</numeroIntermediario>
+		</token:security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<impl:enviaPropostaFinanciamentoVeiculoPasso4Referencias xmlns:impl="http://santander-fo">
+			<chamada xmlns="">
+				<numeroPropostaAdp xmlns=""/>
+				<numeroClienteInterno xmlns=""/>
+				<numeroClienteRelacional xmlns=""/>
+				<codigoDigitoAgencia xmlns=""/>
+				<codigoDigitoContaCorrente xmlns=""/>
+				<codigoTipoContaBancaria xmlns=""/>
+				<descricaoEndRefer1 xmlns=""/>
+				<descricaoEndRefer2 xmlns=""/>
+				<descricaoTelefoneBanco xmlns=""/>
+				<descricaoTelefoneRefer1 xmlns=""/>
+				<descricaoTelefoneRefer2 xmlns=""/>
+				<nomeRefer1 xmlns=""/>
+				<numeroAgencia xmlns=""/>
+				<numeroAnoClienteDesde xmlns=""/>
+				<numeroBanco xmlns=""/>
+				<numeroContaCorrente xmlns=""/>
+				<numeroDddRefer1 xmlns=""/>
+				<numeroDddTelefoneBanco xmlns=""/>
+				<numeroMesClienteDesde xmlns=""/>
+			</chamada>
+		</impl:enviaPropostaFinanciamentoVeiculoPasso4Referencias>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<dlwmin:enviaPropostaFinanciamentoVeiculoPasso4ReferenciasResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/">
+			<insereReferenciaResponse>
+				<codigoErro>@ERVJE0046</codigoErro>
+				<codigoRetorno>20</codigoRetorno>
+				<descricaoErro>CAMPO COD PROP ADP INVALIDO</descricaoErro>
+			</insereReferenciaResponse>
+		</dlwmin:enviaPropostaFinanciamentoVeiculoPasso4ReferenciasResponse>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/">
+	<soapenv:Header>
+		<token:security xmlns:token="http://santander-fo">
+			<username xmlns="">fibrasil</username>
+			<key xmlns="">93874382DB99B855</key>
+			<cnpj xmlns="">14443697000180</cnpj>
+			<codigoGrupoCanal xmlns="">0011.003</codigoGrupoCanal>
+			<numeroIntermediario xmlns="">420648</numeroIntermediario>
+		</token:security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<impl:enviaPropostaFinanciamentoVeiculoPasso5Garantias xmlns:impl="http://santander-fo">
+			<chamada xmlns="">
+				<numeroProposta xmlns=""/>
+				<codigoGarantia xmlns=""/>
+				<codigoObjFinanciado xmlns=""/>
+				<descricaoModelo xmlns=""/>
+			</chamada>
+		</impl:enviaPropostaFinanciamentoVeiculoPasso5Garantias>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<dlwmin:enviaPropostaFinanciamentoVeiculoPasso5GarantiasResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/">
+			<insereGarantiaResponse>
+				<codigoErro>@ERVJE0028</codigoErro>
+				<codigoRetorno>20</codigoRetorno>
+				<descricaoErro>CAMPO COD PROPROS ADP NAO INFORMADO</descricaoErro>
+			</insereGarantiaResponse>
+		</dlwmin:enviaPropostaFinanciamentoVeiculoPasso5GarantiasResponse>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/">
+	<soapenv:Header>
+		<token:security xmlns:token="http://santander-fo">
+			<username xmlns="">fibrasil</username>
+			<key xmlns="">93874382DB99B855</key>
+			<cnpj xmlns="">14443697000180</cnpj>
+			<codigoGrupoCanal xmlns="">0011.003</codigoGrupoCanal>
+			<numeroIntermediario xmlns="">420648</numeroIntermediario>
+		</token:security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<impl:enviaPropostaFinanciamentoVeiculoPasso6Fim xmlns:impl="http://santander-fo">
+			<chamada xmlns="">
+				<numeroPropostaAdp xmlns=""/>
+				<numeroIntermediario xmlns="">114228</numeroIntermediario>
+			</chamada>
+		</impl:enviaPropostaFinanciamentoVeiculoPasso6Fim>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<dlwmin:enviaPropostaFinanciamentoVeiculoPasso6FimResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/">
+			<dadosAdpResponse>
+				<codigoErro>@ERVJE0028</codigoErro>
+				<codigoRetorno>20</codigoRetorno>
+				<descricaoErro>CAMPO COD PROPRO ADP NAO INFORMADO</descricaoErro>
+				<dadosAdp></dadosAdp>
+			</dadosAdpResponse>
+		</dlwmin:enviaPropostaFinanciamentoVeiculoPasso6FimResponse>
+	</soapenv:Body>
+</soapenv:Envelope>
