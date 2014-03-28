@@ -18,8 +18,7 @@ class criarProposta extends carregaMetodo {
 								$valorEntrada         , $valorFinanciamento        , $valorPrestacao, 
 								$dataVencimento1){
 			
-		$this -> campos = get_defined_vars();
-		//$pacoteLiberacao;
+		$this -> campos = get_defined_vars();	
 	}
 
 	protected function getDados() {
