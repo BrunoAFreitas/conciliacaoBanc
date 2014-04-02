@@ -93,7 +93,7 @@ class clsSantanderSoap {
 		while (list($key, $val) = each($this -> parametro)) :
 			$chamada -> addChild($key, $val, "");
 		endwhile;
-
+ 
 		echo $this -> _xml = $xml -> asXML();
 		$this->_xml = $xml->asXML();
 
