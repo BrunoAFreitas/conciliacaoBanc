@@ -9,7 +9,7 @@ class associaReferencia extends carregaMetodo {
 	public $codigoErro, $descricaoErro, $codigoRetorno;
 	private $campos;
 
-	public function __construct($numeroPropostaAdp, $numeroClienteInterno, $numeroClienteRelacional, $codigoDigitoAgencia, $codigoDigitoContaCorrente, $codigoTipoContaBancaria, $descricaoTelefoneBanco, $descricaoTelefoneRefer1, $descricaoTelefoneRefer2, $nomeRefer1, $nomeRefer2, $numeroAgencia, $numeroAnoClienteDesde, $numeroBanco, $numeroContaCorrente, $numeroDddRefer1, $numeroDddRefer2,$numeroDddTelefoneBanco, $numeroMesClienteDesde,$numeroClienteInterno,$numeroClienteRelacional, $descricaoEndRefer1, $descricaoEndRefer2) {
+	public function __construct($numeroPropostaAdp,  $codigoDigitoAgencia, $codigoDigitoContaCorrente, $codigoTipoContaBancaria, $descricaoTelefoneBanco, $descricaoTelefoneRefer1, $descricaoTelefoneRefer2, $nomeRefer1, $nomeRefer2, $numeroAgencia, $numeroAnoClienteDesde, $numeroBanco, $numeroContaCorrente, $numeroDddRefer1, $numeroDddRefer2,$numeroDddTelefoneBanco, $numeroMesClienteDesde,$numeroClienteInterno,$numeroClienteRelacional, $descricaoEndRefer1, $descricaoEndRefer2) {
 		$this -> campos = get_defined_vars();
 
 	}

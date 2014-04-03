@@ -233,7 +233,7 @@ class consultarFinanceira extends crud {
 		$dddbanc = $this -> extrairDDD($cliente['cli_telbanco']);
 		$desde   = $this -> extrairAnoMes($cliente['cli_dtaberturaconta']);
 		
-		$codigoDigitoAgencia       = '0';//$cliente['cli_digitoagencia'];//1d
+		$codigoDigitoAgencia       = '2';//$cliente['cli_digitoagencia'];//1d
 		$codigoDigitoContaCorrente = '8';//$cliente['cli_digitoconta'];//1d
 		$codigoTipoContaBancaria   = $cliente['cli_tipoconta'];//1d
 		$descricaoTelefoneBanco    = "723456789";//$cliente['cli_telbanco'];//10d
@@ -254,8 +254,7 @@ class consultarFinanceira extends crud {
 		$descricaoEndRefer1 = "40032001";
 		$descricaoEndRefer2 = "623456789";
 		
-		$referencia = new associaReferencia( $numeroPropostaAdp, $numeroClienteInterno, $numeroClienteRelacional, 
-											 $codigoDigitoAgencia,$codigoDigitoContaCorrente, $codigoTipoContaBancaria, 
+		$referencia = new associaReferencia( $numeroPropostaAdp, $codigoDigitoAgencia,$codigoDigitoContaCorrente, $codigoTipoContaBancaria, 
 											 $descricaoTelefoneBanco, $descricaoTelefoneRefer1, $descricaoTelefoneRefer2,
 											 $nomeRefer1, $nomeRefer2,$numeroAgencia, 
 											 $numeroAnoClienteDesde, $numeroBanco, $numeroContaCorrente,
@@ -308,7 +307,7 @@ class consultarFinanceira extends crud {
 		print_r( $consolidar -> dadosADP );
 	 
 		if( $consolidar -> codigoRetorno == "00" ) {
-			echo "ok- papito"; 
+			echo "ok - Eta mainha"; 
 		} else { 
 			echo $consolidar -> descricaoErro;
 		}

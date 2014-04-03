@@ -3,7 +3,7 @@
 include_once ("consultarFinanceira.php");
 
 //extende o limite de tempo  de execução da pagina.
-set_time_limit(120);
+set_time_limit(1200);
 
 // id de identificação do cliente.
 $idCliente = "44830171000113";
