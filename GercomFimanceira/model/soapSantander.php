@@ -1,13 +1,4 @@
-<?
-
-/**
- * $usuario = "fibrasil";
- * $key =  "93874382DB99B855";
- * $cnpj = "14443697000180";
- * $codigoGrupoCanal = "0011.003";
- * $numeroIntermediario = "420648";
- */
-
+<?php
 class clsSantanderSoap {
 
 	protected $parametro = array();
@@ -94,11 +85,10 @@ class clsSantanderSoap {
 			$chamada -> addChild($key, $val, "");
 		endwhile;
  
-		echo $this -> _xml = $xml -> asXML();
+		//echo $this -> _xml = $xml -> asXML();
 		$this->_xml = $xml->asXML();
 
 	}
-
 	public function xmlToObject() {
 
 		$xml = simplexml_load_string($this -> _xmlResposta);
@@ -106,7 +96,6 @@ class clsSantanderSoap {
 
 		return $xml;
 	}
-
 	public function toArray($buscar = null, $xml = null) {
 
 		$XML = $xml ? $xml : $this -> _xmlResposta;

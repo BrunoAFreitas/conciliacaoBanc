@@ -95,7 +95,6 @@ class consultarFinanceira extends crud {
 		// para relacionar as informacaoes inseridas nos demais passos
 		
 		// iniciando o passo dois e passando o numero da proposta
-		
 		$this -> passo2($this -> numeroProposta);
 		
 	}
@@ -165,6 +164,9 @@ class consultarFinanceira extends crud {
 	
 	// associa endereco ao interveniente (passo 3) endereço
 	public function passo3($numeroProposta1) {
+		
+		//$codigoCel = $cliente['cli_celular1'];//10d
+
 		$numeroPropostaAdp    =  $numeroProposta1;       // dados obtido passo 1
 		$numeroClienteInterno =  $this -> nrInterveniente;    // dados obtido passo 2
 		
@@ -179,7 +181,6 @@ class consultarFinanceira extends crud {
 		$codigoPaisResidencial 			  = "BR";//2d
 		$codigoSiglaUfComercial           = 'AC';//$cliente['cli_estadotrab'];//2d
 		$codigoSiglaUfResidencial         = 'AC';//$cliente['cli_estado'];//2d
-		//$codigoCel                        = $cliente['cli_celular1'];//10d
 		$dataAnoResideDesde               = '1994';// $reside[0];//3d
 		$dataMesResideDesde               = '06';//$reside[1];	//3d
 		$descricaoComplementoEndComercial = 'CJ. 11';//$cliente['cli_complementotrab'];//20d
@@ -242,7 +243,7 @@ class consultarFinanceira extends crud {
 		$nomeRefer1                = 'Referencia Teste Dois';//$cliente['cli_nomeref1'];
 		$nomeRefer2                = 'Referencia Teste Dois';//$cliente['cli_nomeoref2'];//50d
 		$numeroAgencia             = '043';//$cliente['cli_numeroagenc'];//5d
-		$numeroAnoClienteDesde     = $desde[0];//4d
+		$numeroAnoClienteDesde     =  '1994';//$desde[0];//4d
 		$numeroBanco               = '033';//$cliente['cli_numerobanco'];//3d
 		$numeroContaCorrente       = '10103359';//$cliente['cli_conta'];//8d
 		$numeroDddRefer1           = '11';//$dddref1;//3d
@@ -251,8 +252,8 @@ class consultarFinanceira extends crud {
 		$numeroMesClienteDesde     = $desde[1];//2d
 		$numeroClienteInterno      = $this->nrInterveniente;
 		$numeroClienteRelacional   = $this->nrInterveniente;
-		$descricaoEndRefer1 = "40032001";
-		$descricaoEndRefer2 = "623456789";
+		$descricaoEndRefer1	 	   = "40032001";
+		$descricaoEndRefer2 	   = "623456789";
 		
 		$referencia = new associaReferencia( $numeroPropostaAdp, $codigoDigitoAgencia,$codigoDigitoContaCorrente, $codigoTipoContaBancaria, 
 											 $descricaoTelefoneBanco, $descricaoTelefoneRefer1, $descricaoTelefoneRefer2,
@@ -276,8 +277,8 @@ class consultarFinanceira extends crud {
 	public function passo5($numeroProposta) {
 		$numeroProposta = $numeroProposta;   //dados obtidos no primeiro passo 
 		
-		$codigoGarantia = '01';				//2d
-		$codigoObjFinanciado = 'VN';		//2d
+		$codigoGarantia = '01';//2d
+		$codigoObjFinanciado = 'VN';//2d
 		$descricaoModelo = "TIPO OBJETO FINANCIADO";//20d
 		
 		$garantia = new associaGarantia( $numeroProposta, $codigoGarantia, $codigoObjFinanciado, $descricaoModelo);

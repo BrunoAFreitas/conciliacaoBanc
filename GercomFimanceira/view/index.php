@@ -443,7 +443,7 @@
 		echo "</pre>";
  	} else {
  		echo "<pre>";
-		echo  $endereco->descricaoErro;
+		echo  $endereco->descricaoErro;                                              
 		echo "</pre>";
  	}
 
@@ -530,7 +530,7 @@
 		echo "<pre>";
 		echo $garantia->descricaoErro;
 		echo "</pre>";
-	 }
+	}
 	// associa garantia (passo 6)
 	/**************************************************/
 	include_once("../controller/consolidarProposta.php");

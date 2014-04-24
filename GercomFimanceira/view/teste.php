@@ -17,9 +17,9 @@ $numeroIdProduto = "0206";
 $valorFinanciamento = "60.000,00";
 $codigoTipoMoeda = "PRE";
 $dataVencimento1 = date('d/m/Y', strtotime("+30 days"));
-$valorPrestacao = "434,08";
+$valorPrestacao = "1434,08";
 $valorBem = "80.000,00";
-$numeroQuantidadePrestacoes = "48";
+$numeroQuantidadePrestacoes = "36";
 $numeroTabelaFinanciamento = "55785";
 $codigoModalidade = "P";
 $isencaoTC  = "S";
@@ -46,5 +46,4 @@ $consulta -> passo1($codigoFormaPagamento , $dataEntregaBem            , $codigo
 
 $test = $consulta -> getMensage();
 echo $test;
-
 ?>
