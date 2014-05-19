@@ -340,7 +340,7 @@
 										<td>
 											<select name="edtEnd" id="edtEnd" class="select">
 												<?php
-												$valores->tendereco();
+													$valores->tendereco();
 												?>
 											</select>
 										</td>

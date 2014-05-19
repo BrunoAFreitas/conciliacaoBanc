@@ -18,6 +18,8 @@ include_once("../controller/associaReferencia.php");
 include_once("../controller/associaGarantia.php");
 // passo 6
 include_once("../controller/consolidarProposta.php");
+//classe Adicional
+include_once("../controller/form.class.php");
 
 class consultarFinanceira extends crud {
 
@@ -31,11 +33,14 @@ class consultarFinanceira extends crud {
 	private $nrInterveniente;
 	// Array bd
 	private $clienteBD;
+	// Classe Form
+	private $form;
 	
 	
 	public function __construct($idCliente) {
 		$this -> idCliente = $idCliente;
 		$this -> clienteBD = $this ->cliente();
+		$this -> form = new forms();
 	}
 
 	// metodo para setar as msg
@@ -61,9 +66,19 @@ class consultarFinanceira extends crud {
 	}
 	
 	public function extrairDDD($fone){
-		$fone1 = explode('(',$fone);
-		$fone  = explode(')',$fone1[1]);
-		return $fone[0];
+		$fone = explode(")", $fone);
+		$fone = explode("(", $fone[0]);
+		return $fone[1];
+		
+	}
+
+	public function extrairDigito($conta, $posicao){
+		$conta = explode("-", $conta);
+		if($posicao == 0){
+			return $conta[0];
+		}else{
+			return $conta[1];
+		}
 	}
 	
 	// Criar proposta (passo 1)
@@ -104,50 +119,57 @@ class consultarFinanceira extends crud {
 		
 		$cliente = $this -> clienteBD;
 		$numeroPropostaAdp = $criarProposta;// este codigo vem do primeiro passo
+
 		
 		$numeroTipoVinculoPart    = "1";
 		$codigoDocumento          = $cliente['cli_inscrg'];//20d
-		$codigoEstadoNaturalidade = 'CE';//$cliente['cli_estado'];//2d
-		$codigoEstadoOrgaoEmissor = 'CE';//$cliente['cli_estadorgemissor'];//2d
+		$codigoEstadoNaturalidade = $cliente['cli_estado'];//2d
+		$codigoEstadoOrgaoEmissor = $cliente['cli_estadorgemissor'];//2d
 		$codigoNacionalidade      = $cliente['cli_nacionalidade'];//2d
-		$codigoPaisDocumento      = 'BR';//$cliente['cli_paisdocumento'];//2d
-		$codigoSedePropria        = $cliente['cli_sedepropria'];//1d
-		$codigoSexo               = 'M';//$cliente['cli_sexo'];//1d
-		$codigoTipoPessoa         = 'F';//$cliente['cli_fisica'];//1d
-		$dataAdmissao             = '13/12/1994';//$cliente['cli_dtadmtrab'];//date
-		$dataEmissaoDocumento     = '13/12/1994';//$cliente['cli_rgdtemissao'];//date Mudar para padrão nascional
-		$dataNascimento           = '13/12/1994';//$cliente['cli_dtnasc'];//date
+		$codigoPaisDocumento      = $cliente['cli_paisdocumento'];//2d
+		//sedePropria
+		$codigoSexo               = $cliente['cli_sexo'];//1d
+		$codigoTipoPessoa         = ($cliente['cli_fisica'] == 'S' ? 'F' : 'J');
+		$dataAdmissao             = $this -> form -> muda_data_pt($cliente['cli_dtadmtrab']);//date
+		$dataEmissaoDocumento     = $this -> form -> muda_data_pt($cliente['cli_rgdtemissao']);//date Mudar para padrão nascional
+		$dataNascimento           = $this -> form -> muda_data_pt($cliente['cli_dtnasc']);//date
 		$descricaoNaturalidade    = 'Bela Cruz';//$cliente['cli_naturalidade'];//40d
 		$descricaoProfissao       = 'Oleiro';//$cliente['cli_profissao'];//40d
-		$nomeCompleto             = 'Nome Teste Passo Dois';//$cliente['cli_razao'].' Freitas Araújo';//60d
-		$nomeEmpresa              = $cliente['cli_razao'];//60d
-		$nomeOrgaoEmissor         = 'SSP';//$cliente['cli_rgemissor'];//5d
-		$nomeMae                  = 'Mae Teste Passo Dois';//$cliente['cli_pai'];//60d
-		$nomePai    			  = 'Pai Teste Passo Dois';//$cliente['cli_mae'];//60d
+		$nomeCompleto             = $cliente['cli_razao'];//60d
+		//nomeEmpresa
+		$nomeOrgaoEmissor         = $cliente['cli_rgemissor'];//5d
+		$nomeMae                  = $cliente['cli_mae'];//60d
+		$nomePai    			  = $cliente['cli_pai'];//60d
 		$numeroCnpjEmpresa        = $cliente['cli_cgccpf'];//15d
-		$numeroComprovanteRenda   = '01';//$cliente['cli_tpcomprenda'];//xx
+		$numeroComprovanteRenda   = $cliente['cli_tpcomprenda'];//xx
 		$numeroCpfCnpj            = $cliente['cli_cgccpf'];//11d
 		$numeroDependentes        = $cliente['cli_qtdfilhos'];//3d
-		$numeroEstadoCivil        = '01';//$cliente['cli_estadocivil'];//2d
+		$numeroEstadoCivil        = $cliente['cli_estadocivil'];//2d
 		$numeroProfissao          = $cliente['cli_profissaocod'];//5d
-		$numeroRenda              = '01';$cliente['cli_numoutrasrendas'];//3d
-		$numeroTipoDocumento      = '01';//$cliente['cli_tipodoc'];//xx
-		$valorOutrasRendas        = '100,00';//$cliente['cli_outrasrendas'];//15,2m
-		$valorPatrimonio          = '100000,00';//$cliente['cli_patrimonio'];//15,2m
-		$valorRendaMensal         = '10000,00';//$cliente['cli_rendamensal'];//15,2m
+		$numeroRenda              = $cliente['cli_numoutrasrendas'];//3d
+		$numeroTipoDocumento      = $cliente['cli_tipodoc'];//xx
+		$valorOutrasRendas        = $cliente['cli_outrasrendas'];//15,2m
+		$valorPatrimonio          = $cliente['cli_patrimonio'];//15,2m
+		$valorRendaMensal         = $cliente['cli_rendamensal'];//15,2m
 		$numeroInstrucao          = '01';//cod 10
 		$indicativoDeficienteFisico = 'N';// S/N
 		$numeroOcupacao           = '01';//Cod 21
 		
-		$interveniente = new criarInterveniente($numeroTipoVinculoPart,$numeroPropostaAdp, $codigoDocumento, $codigoEstadoNaturalidade, $codigoEstadoOrgaoEmissor, 
-												$codigoNacionalidade, $codigoPaisDocumento, $codigoSedePropria, $codigoSexo, 
-												$codigoTipoPessoa, $dataAdmissao, $dataEmissaoDocumento, $dataNascimento, 
-												$descricaoNaturalidade, $descricaoProfissao,  
-												$nomeCompleto, $nomeEmpresa, $nomeOrgaoEmissor, 
-												$nomeMae, $nomePai, $numeroCnpjEmpresa, $numeroComprovanteRenda, $numeroCpfCnpj, 
-												$numeroDependentes, $numeroEstadoCivil, $numeroProfissao, 
-												$numeroRenda, $numeroTipoDocumento, $valorOutrasRendas, $valorPatrimonio, 
-												$valorRendaMensal,$numeroInstrucao,$indicativoDeficienteFisico,$numeroOcupacao);
+		
+		$nomeEmpresa = $cliente['cli_razao'];//60d
+		$codigoSedePropria = $cliente['cli_sedepropria'];//1d
+
+			$interveniente = new criarInterveniente($numeroTipoVinculoPart,$numeroPropostaAdp, $codigoDocumento, $codigoEstadoNaturalidade, $codigoEstadoOrgaoEmissor, 
+													$codigoNacionalidade, $codigoPaisDocumento, $codigoSedePropria, $codigoSexo, 
+													$codigoTipoPessoa, $dataAdmissao, $dataEmissaoDocumento, $dataNascimento, 
+													$descricaoNaturalidade, $descricaoProfissao,  
+													$nomeCompleto, $nomeEmpresa, $nomeOrgaoEmissor, 
+													$nomeMae, $nomePai, $numeroCnpjEmpresa, $numeroComprovanteRenda, $numeroCpfCnpj, 
+													$numeroDependentes, $numeroEstadoCivil, $numeroProfissao, 
+													$numeroRenda, $numeroTipoDocumento, $valorOutrasRendas, $valorPatrimonio, 
+													$valorRendaMensal,$numeroInstrucao,$indicativoDeficienteFisico,$numeroOcupacao);
+		
+
 		$interveniente -> executa();
 		// criando o numero do passo dois
 		$this -> nrInterveniente = $interveniente -> numeroInternoCliente;
@@ -172,37 +194,37 @@ class consultarFinanceira extends crud {
 		
 		$cliente = $this -> clienteBD;
 		$reside  = $this -> extrairAnoMes($cliente['cli_residedesde']);
-		$dddCel  = $this -> extrairDDD($cliente['cli_cel1']);
+		$dddCel  = $this -> extrairDDD($cliente['cli_celular1']);
 		$dddRes  = $this -> extrairDDD($cliente['cli_fone']);
 		$dddTra  = $this -> extrairDDD($cliente['cli_fonetrab']); 
 		
 		$codigoEnderecoCorrespondencia    = "R";
 		$codigoPaisComercial 			  = "BR";//2d
 		$codigoPaisResidencial 			  = "BR";//2d
-		$codigoSiglaUfComercial           = 'AC';//$cliente['cli_estadotrab'];//2d
-		$codigoSiglaUfResidencial         = 'AC';//$cliente['cli_estado'];//2d
-		$dataAnoResideDesde               = '1994';// $reside[0];//3d
-		$dataMesResideDesde               = '06';//$reside[1];	//3d
-		$descricaoComplementoEndComercial = 'CJ. 11';//$cliente['cli_complementotrab'];//20d
-		$descricaoComplementoResidencia   = "CJ. 11";//$cliente['cli_complemento'];//20d
-		$descricaoEnderecoComercial       = "Rua Pernambuco";//$cliente['cli_endtrab'];//60d
-		$descricaoEnderecoResidencia 	  = "Rua Pernambuco";//$cliente['cli_end'];//50d
-		$descricaoEnderecoEmail 		  = "teste@teste.com";//$cliente['cli_email'];//50d
-		$descricaoTelComercial 			  = '74652221';//$cliente['cli_fonetrab'];//10d
-		$descricaotelResidencial 		  = '74652221';//$cliente['cli_fone'];//10d
-		$nomeBairroComercial              = "Dom Giocondo";//$cliente['cli_bairrotrab'];//20d
-		$nomeBairroResidencial 			  = "Dom Giocondo";//$cliente['cli_bairro'];//20d
-		$nomeCidadeComercial              = "Rio Branco";//$cliente['cli_cidadetrab'];//20d
-		$nomeCidadeResidencial  		  = "Rio Branco";//$clinete['cli_cidade'];//20d
-		$numeroCepComercial               = "69900306";//$cliente['cli_ceptrab'];//8d
-		$numeroCepResidencial 			  = '69900306';//$cliente['cli_cep'];//8d
-		$numeroDddCel 					  = '11';//$dddCel;//3d
-		$numeroDddResidencial 			  = '11';//$dddRes;//3d
-		$numeroDddTelComercial 			  = '11';//$dddTra;//3d
-		$numeroEnderecoComercial 		  = '158';//$cliente['cli_numerotrab'];//5d
-		$numeroResidencial 				  = '1893';//$cliente['cli_numeroend'];//5d
-		$numeroTipoResidencia 			  = '1';//$cliente['cli_tiporesid'];//2d
-		$numeroTipoTelefResiden 		  = '1';//$cliente['cli_tipofone'];//2d
+		$codigoSiglaUfComercial           = $cliente['cli_estadotrab'];//2d
+		$codigoSiglaUfResidencial         = $cliente['cli_estado'];//2d
+		$dataAnoResideDesde               = $reside[0];//3d
+		$dataMesResideDesde               = $reside[1];	//3d
+		$descricaoComplementoEndComercial = $cliente['cli_complementotrab'];//20d
+		$descricaoComplementoResidencia   = $cliente['cli_complemento'];//20d
+		$descricaoEnderecoComercial       = $cliente['cli_endtrab'];//60d
+		$descricaoEnderecoResidencia 	  = $cliente['cli_end'];//50d
+		$descricaoEnderecoEmail 		  = $cliente['cli_email'];//50d
+		$descricaoTelComercial 			  = $cliente['cli_fonetrab'];//10d
+		$descricaotelResidencial 		  = $cliente['cli_fone'];//10d
+		$nomeBairroComercial              = $cliente['cli_bairrotrab'];//20d
+		$nomeBairroResidencial 			  = $cliente['cli_bairro'];//20d
+		$nomeCidadeComercial              = $cliente['cli_cidadetrab'];//20d
+		$nomeCidadeResidencial  		  = $cliente['cli_cidade'];//20d
+		$numeroCepComercial               = $cliente['cli_ceptrab'];//8d
+		$numeroCepResidencial 			  = $cliente['cli_cep'];//8d
+		$numeroDddCel 					  = $dddCel;//3d
+		$numeroDddResidencial 			  = $dddRes;//3d
+		$numeroDddTelComercial 			  = $dddTra;//3d
+		$numeroEnderecoComercial 		  = $cliente['cli_numerotrab'];//5d
+		$numeroResidencial 				  = $cliente['cli_numeroend'];//5d
+		$numeroTipoResidencia 			  = $cliente['cli_tiporesid'];//2d
+		$numeroTipoTelefResiden 		  = $cliente['cli_tipofone'];//2d
 		
 		$endereco = new associarEnderecoInterveniente( $numeroPropostaAdp,  $numeroClienteInterno, $codigoEnderecoCorrespondencia, $codigoPaisComercial, $codigoPaisResidencial,
 													   $codigoSiglaUfComercial, $codigoSiglaUfResidencial,  $dataAnoResideDesde,
@@ -226,7 +248,7 @@ class consultarFinanceira extends crud {
 
 	// associa referencia (passo 4) pessoal bancaria
 	public function passo4($numeroProposta) {
-		$numeroPropostaAdp = $numeroProposta;   // dados obtido no primeiro passo
+		$numeroPropostaAdp = $numeroProposta;   // dados obtido no primeiro passo2
 		
 		$cliente = $this -> clienteBD;
 		$dddref1 = $this -> extrairDDD($cliente['cli_telref1']);
@@ -234,21 +256,21 @@ class consultarFinanceira extends crud {
 		$dddbanc = $this -> extrairDDD($cliente['cli_telbanco']);
 		$desde   = $this -> extrairAnoMes($cliente['cli_dtaberturaconta']);
 		
-		$codigoDigitoAgencia       = '0';//$cliente['cli_digitoagencia'];//1d
-		$codigoDigitoContaCorrente = '8';//$cliente['cli_digitoconta'];//1d
+		$codigoDigitoAgencia       = $this->extrairDigito($cliente['cli_agencia'],1);//1d
+		$codigoDigitoContaCorrente = $this->extrairDigito($cliente['cli_conta'],1);//1d
 		$codigoTipoContaBancaria   = $cliente['cli_tipoconta'];//1d
-		$descricaoTelefoneBanco    = "723456789";//$cliente['cli_telbanco'];//10d
-		$descricaoTelefoneRefer1   = '623456789';//$cliente['cli_telref1'];//10d
-		$descricaoTelefoneRefer2   = '723456789';//$cliente['cli_telref1'];//10d
-		$nomeRefer1                = 'Referencia Teste Dois';//$cliente['cli_nomeref1'];
-		$nomeRefer2                = 'Referencia Teste Dois';//$cliente['cli_nomeoref2'];//50d
+		$descricaoTelefoneBanco    = $cliente['cli_telbanco'];//10d
+		$descricaoTelefoneRefer1   = $cliente['cli_telref1'];//10d
+		$descricaoTelefoneRefer2   = $cliente['cli_telref1'];//10d
+		$nomeRefer1                = $cliente['cli_nomeref1'];
+		$nomeRefer2                = $cliente['cli_nomeref2'];//50d
 		$numeroAgencia             = '043';//$cliente['cli_numeroagenc'];//5d
 		$numeroAnoClienteDesde     =  '1994';//$desde[0];//4d
 		$numeroBanco               = '033';//$cliente['cli_numerobanco'];//3d
 		$numeroContaCorrente       = '10103359';//$cliente['cli_conta'];//8d
-		$numeroDddRefer1           = '11';//$dddref1;//3d
-		$numeroDddRefer2           = '11';//$dddref2;//3d
-		$numeroDddTelefoneBanco    = '11';//$dddbanc;//3d 
+		$numeroDddRefer1           = $dddref1;//3d
+		$numeroDddRefer2           = $dddref2;//3d
+		$numeroDddTelefoneBanco    = $dddbanc;//3d 
 		$numeroMesClienteDesde     = $desde[1];//2d
 		$numeroClienteInterno      = $this->nrInterveniente;
 		$numeroClienteRelacional   = $this->nrInterveniente;
@@ -261,7 +283,7 @@ class consultarFinanceira extends crud {
 											 $numeroAnoClienteDesde, $numeroBanco, $numeroContaCorrente,
 											 $numeroDddRefer1,$numeroDddRefer2, $numeroDddTelefoneBanco, 
 											 $numeroMesClienteDesde,$numeroClienteInterno,$numeroClienteRelacional, $descricaoEndRefer1, $descricaoEndRefer2 );
-		$referencia->executa();
+		$referencia->executa(); 
 		
 		if($referencia->codigoRetorno == "00") {
 			echo "ok";
@@ -278,8 +300,8 @@ class consultarFinanceira extends crud {
 		$numeroProposta = $numeroProposta;   //dados obtidos no primeiro passo 
 		
 		$codigoGarantia = '01';//2d
-		$codigoObjFinanciado = 'VN';//2d
-		$descricaoModelo = "TIPO OBJETO FINANCIADO";//20d
+		$codigoObjFinanciado = 'MO';//2d
+		$descricaoModelo = "CD-130";//20d
 		
 		$garantia = new associaGarantia( $numeroProposta, $codigoGarantia, $codigoObjFinanciado, $descricaoModelo);
 		$garantia->executa();
@@ -308,7 +330,7 @@ class consultarFinanceira extends crud {
 		print_r( $consolidar -> dadosADP );
 	 
 		if( $consolidar -> codigoRetorno == "00" ) {
-			echo "ok - Eta mainha"; 
+			echo "ok"; 
 		} else { 
 			echo $consolidar -> descricaoErro;
 		}

@@ -10,11 +10,22 @@ class criarInterveniente extends carregaMetodo {
 	private $campos;
 	public $simulacaoFinanciamentos, $simulacaoPropostas, $numeroInternoCliente;
 
-	public function __construct($numeroTipoVinculoPart,$numeroPropostaAdp, $codigoDocumento, $codigoEstadoNaturalidade, $codigoEstadoOrgaoEmissor, $codigoNacionalidade, $codigoPaisDocumento, $codigoSedePropria, $codigoSexo, $codigoTipoPessoa, $dataAdmissao, $dataEmissaoDocumento, $dataNascimento,  $descricaoNaturalidade, $descricaoProfissao,   $nomeCompleto, $nomeEmpresa, $nomeOrgaoEmissor, $nomeMae, $nomePai, $numeroCnpjEmpresa, $numeroComprovanteRenda, $numeroCpfCnpj, $numeroDependentes, $numeroEstadoCivil, $numeroProfissao, $numeroRenda, $numeroTipoDocumento, $valorOutrasRendas, 
-								$valorPatrimonio, $valorRendaMensal,$numeroInstrucao,$indicativoDeficienteFisico,$numeroOcupacao) {
+	public function __construct($numeroTipoVinculoPart,$numeroPropostaAdp, $codigoDocumento, 
+								$codigoEstadoNaturalidade, $codigoEstadoOrgaoEmissor, $codigoNacionalidade, 
+								$codigoPaisDocumento, $codigoSedePropria, $codigoSexo, 
+								$codigoTipoPessoa, $dataAdmissao, $dataEmissaoDocumento, 
+								$dataNascimento,  $descricaoNaturalidade, $descricaoProfissao,   
+								$nomeCompleto, $nomeEmpresa, $nomeOrgaoEmissor, $nomeMae, $nomePai, 
+								$numeroCnpjEmpresa, $numeroComprovanteRenda, $numeroCpfCnpj, 
+								$numeroDependentes, $numeroEstadoCivil, $numeroProfissao,
+								$numeroRenda, $numeroTipoDocumento, $valorOutrasRendas, 
+								$valorPatrimonio, $valorRendaMensal,$numeroInstrucao,
+								$indicativoDeficienteFisico,$numeroOcupacao) {
 		$this -> campos = get_defined_vars();
 
 	}
+
+
 
 	protected function getDados() {
 

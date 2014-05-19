@@ -6,7 +6,7 @@ include_once ("consultarFinanceira.php");
 set_time_limit(1200);
 
 // id de identificação do cliente.
-$idCliente = "44830171000113";
+$idCliente = "05754853378";
 
 //objeto
 $consulta = new consultarFinanceira($idCliente);
@@ -14,23 +14,23 @@ $consulta = new consultarFinanceira($idCliente);
 //variaveis do sistema. 	
 $codigoFormaPagamento = "CA";
 $numeroIdProduto = "0206";
-$valorFinanciamento = "60.000,00";
+$valorFinanciamento = "10.000,00";
 $codigoTipoMoeda = "PRE";
 $dataVencimento1 = date('d/m/Y', strtotime("+30 days"));
-$valorPrestacao = "1434,08";
-$valorBem = "80.000,00";
+$valorPrestacao = "277,80";
+$valorBem = "20.000,00";
 $numeroQuantidadePrestacoes = "36";
 $numeroTabelaFinanciamento = "55785";
 $codigoModalidade = "P";
 $isencaoTC  = "S";
 $isencaoTAB = "N";
 $dataEntregaBem = date('d/m/Y');
-$nomeVendedor = "Vendedor Teste";
+$nomeVendedor = "Akarlos Vasconcelos";
 $numeroVendedor = "13";
 $indicadorTac = "N";
 $textoControleLoja = "teste do sistema..";
 $textoObsLoja = "Teste do sistema...";
-$valorEntrada = "20.000,00";
+$valorEntrada = "10.000,00";
 
 
 //fazer a chamada do primerio passo
