@@ -16,7 +16,7 @@ class criarInterveniente extends carregaMetodo {
 								$codigoTipoPessoa, $dataAdmissao, $dataEmissaoDocumento, 
 								$dataNascimento,  $descricaoNaturalidade, $descricaoProfissao,   
 								$nomeCompleto, $nomeEmpresa, $nomeOrgaoEmissor, $nomeMae, $nomePai, 
-								$numeroCnpjEmpresa, $numeroComprovanteRenda, $numeroCpfCnpj, 
+								$numeroComprovanteRenda, $numeroCpfCnpj, 
 								$numeroDependentes, $numeroEstadoCivil, $numeroProfissao,
 								$numeroRenda, $numeroTipoDocumento, $valorOutrasRendas, 
 								$valorPatrimonio, $valorRendaMensal,$numeroInstrucao,

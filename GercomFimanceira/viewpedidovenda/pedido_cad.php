@@ -12,7 +12,7 @@
  * @example test_aut_md.php
  *
  */
-set_time_limit(1200);
+set_time_limit(0);
 include_once ("function_dados.php");
 include_once ("../view/consultaDom.class.php");
 include_once ("../view/AtvEconomica.class.php");

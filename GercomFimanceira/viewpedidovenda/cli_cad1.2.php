@@ -263,7 +263,7 @@
 										<td>
 											<select name="selNacio" id="selNacio" class="select" onChange="natural();">
 												<?php
-												echo $dom -> dominio('22');
+												 $dom -> dominio('22');
 												//echo $dom -> dominio('33');
 												?>
 											</select>
@@ -278,7 +278,8 @@
 										<td>		
 										<select name="edtUfEnd" id="edtUfEnd" class="select">
 											<?php
-											$dom -> dominio('39');
+											 $dom -> dominio('39');
+
 											?>
 										</select>
 										</td>

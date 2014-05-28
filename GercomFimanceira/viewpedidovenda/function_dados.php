@@ -205,7 +205,7 @@ class function_dados {
 					echo "<option value='" . $linha_prof -> clip_cod . "'selected>" . $linha_prof -> clip_desc . "
 						  </option>";
 				} else {
-					echo "<option value='" . $linha_prof -> clip_cod . "'>" . $linha_prof -> clip_desc . "</option>";
+					echo "<option value='" . $linha_prof -> clip_cod . '|' . $linha_prof -> clip_desc . "'>" . $linha_prof -> clip_desc . "</option>";
 				}
 			}
 		}
@@ -248,7 +248,7 @@ class function_dados {
 				if ($linha_cidade -> fmun_cod == $edtCidade) {
 					echo "<option value='" . $linha_cidade -> fmun_cod . "'selected>" . any_accentuation($linha_cidade -> fmun_desc) . " </option>";
 				} else {
-					echo "<option value='" . $linha_cidade -> fmun_cod . "'>" . $linha_cidade -> fmun_desc . "</option>";
+					echo "<option value='" . $linha_cidade -> fmun_cod  . "'>" . $linha_cidade -> fmun_desc . "</option>";
 				}
 			}
 		}
@@ -308,7 +308,7 @@ class function_dados {
 			echo "<option value='00' selected>Natural de</option>";
 			while ($linha_nat = mysql_fetch_object($query_nat)) {
 				$natdesc = $linha_nat -> fmun_desc;
-				echo "<option value='" . $linha_nat -> fmun_cod . "'>" . $natdesc . "</option>";
+				echo "<option value='" . $natdesc . "'>" . $natdesc . "</option>";
 			}
 		}
 	}
@@ -384,7 +384,7 @@ class function_dados {
 	/**
 	 * Metodo que verifica se cidade esta cadastrada
 	 * @access public
-	 * @param String $edtCidade
+	 * @param String $edtCidadea
 	 * @return String $edtCidadedesc
 	 */
 	public function procuraCidade($edtCidade) {

@@ -101,7 +101,7 @@ $edtExtras = $_POST['edtExtras'];
 $selTipoFone = $_POST['selTipoFone'];
 $selSede = $_POST['selSede'];//cli_sedepropria
 $selTipoDoc = $_POST['selTipoDoc'];//cli_tipodoc
-$edtUf = $_POST['edtUF'];//cli_estadorgemissor
+$edtUf = $_POST['edtUf'];//cli_estadorgemissor
 $selPaisDoc = $_POST['selPaisDoc'];//cli_paisdocumento
 $selTipoComp = $_POST['selTipoComp'];//cli_tbcomprenda
 $selTipoRenda = $_POST['selTipoRenda'];//cli_numoutrasrendas
@@ -117,6 +117,13 @@ $edtPatrimJ = $_POST['edtPatri'];// pessoa juridica
 $selGruAtEco = $_POST['selGruAtEco'];
 $selAtEco = $_POST['selAtEco'];
 $edtFatMen = $_POST['edtFatMen'];
+$selOcupacao = $_POST['selOcupacao'];
+
+$profissao = explode('|', $edtProfissao);
+$profissaoDes = $profissao[1];
+$profissaoCod = $profissao[0];
+
+
 
 /*
  * trava de idade
@@ -151,7 +158,7 @@ $edtEmail = strtolower($edtEmail);
 /**
  * Aqui é a parte das verificações
  */
-if ($novocad1 == "S") {
+//if ($novocad1 == "S") {
 	if ($edtCidade == "0") {
 		echo "Não pode cadastrar sem cidade!";
 	}
@@ -161,40 +168,60 @@ if ($novocad1 == "S") {
 	// aqui e procurando os dados para cadastro
 	$edtCidadedesc = $valores -> procuraCidade($edtCidade);
 	$edtBairrodesc = $valores -> procuraBairro($edtBairro);
-}
+
+	$selCidadeTrabDes = $valores -> procuraCidade($selCidadeTrab);
+	$selBairroTrabDes = $valores -> procuraBairro($selBairroTrab);
+
+//}
 /**
  * Fazer uma verificação se e pessoa fisica ou juridica
  */
 if ($tipoCli == "fisica") {
 	$tipoCli = "S";
 	if ($keyperm == "S") {
-		$cadastra -> setFields("cli_cgccpf, cli_emp, cli_razao, cli_fisica, cli_inscrg, cli_rgemissor, cli_rgdtemissao,
-								cli_sexo, cli_dtnasc, cli_naturalidade, cli_nacionalidade, cli_timefutebol, cli_estadocivil, cli_conjuge,
-								cli_pai, cli_mae, cli_qtdfilhos,
-								cli_tipoend, cli_end, cli_numeroend, cli_complemento, cli_tiporesid, cli_residedesde, cli_estado, cli_cidadecod, 
-								cli_bairrocod, cli_cep, cli_pontoref, cli_endentrega, cli_email, cli_fone,
-								cli_celular1, cli_celular2, cli_operadora1, cli_operadora2, cli_tipofone, cli_usaredesocial, cli_redessociais,
-								cli_profissaocod, cli_trabalho, cli_dtadmtrab, cli_fonetrab, cli_tipoendtrab, cli_endtrab,
-								cli_numerotrab, cli_complementotrab, cli_estadotrab, cli_cidadetrab, cli_bairrotrab, cli_ceptrab,
-								cli_rendamensal, cli_outrasrendas,
-								cli_banco, cli_agencia, cli_conta, cli_tipoconta, cli_dtaberturaconta, cli_obs,
-								cli_incluido, cli_alterado, cli_dtincluido, cli_dtalterado, cli_hora, cli_loja, cli_login,
-								cli_tipodoc, cli_estadorgemissor, cli_paisdocumento, cli_tpcomprenda, cli_numoutrasrendas,
-								cli_telbanco, cli_numerobanco, cli_numeroagenc, cli_telref1, cli_telref2, cli_nomeref1,cli_nomeref2, cli_patrimonio");
+		$cadastra -> setFields("cli_cgccpf, cli_emp, cli_razao, cli_fisica,
+								cli_inscrg, cli_rgemissor, cli_rgdtemissao, cli_sexo, 
+								cli_dtnasc, cli_naturalidade, cli_nacionalidade, cli_timefutebol, 
+								cli_estadocivil, cli_conjuge, cli_pai, cli_mae, 
+								cli_qtdfilhos,cli_tipoend, cli_end, cli_numeroend, 
+								cli_complemento, cli_tiporesid, cli_residedesde, cli_estado, 
+								cli_cidadecod, cli_cidade, cli_bairrocod, cli_cep, 
+								cli_pontoref, cli_endentrega, cli_email, cli_fone,
+								cli_celular1, cli_celular2, cli_operadora1, cli_operadora2, 
+								cli_tipofone, cli_usaredesocial, cli_redessociais, cli_profissaocod, 
+								cli_profissao, cli_ocupcod, cli_trabalho, cli_dtadmtrab, 
+								cli_fonetrab, cli_tipoendtrab, cli_endtrab, cli_numerotrab, 
+								cli_complementotrab, cli_estadotrab, cli_cidadetrab, cli_cidadetrabdesc, 
+								cli_bairrotrab, cli_ceptrab, cli_rendamensal, cli_outrasrendas,
+								cli_banco, cli_agencia, cli_conta, cli_tipoconta, 
+								cli_dtaberturaconta, cli_obs, cli_incluido, cli_alterado, 
+								cli_dtincluido, cli_dtalterado, cli_hora, cli_loja, 
+								cli_login, cli_tipodoc, cli_estadorgemissor, cli_paisdocumento, 
+								cli_tpcomprenda, cli_numoutrasrendas, cli_telbanco, cli_numerobanco, 
+								cli_numeroagenc, cli_telref1, cli_telref2, cli_nomeref1,
+								cli_nomeref2, cli_patrimonio, cli_bairro");
 
-		$cadastra -> setDados(" '$edtCgcCpf', '', '$edtRazao', '$tipoCli', '$edtInscr', '$edtOrgEm', '$edtDtEm',
-								'$selSex', '$edtDtNasc', '$selNatu', '$selNacio', '$selTime', '$selEstCiv', '$edtConjuge', 
-								'$edtPai', '$edtMae', '$edtQtFi',
-								'$edtEnd', '$edtTipoEnde', '$edtNum', '$edtCompt', '$edtTipRes', '$edtResDesd', '$edtEstado', '$edtCidade',
-								'$edtBairro', '$edtCep', '$edtPontRef', '$edtEndEntrega', '$edtEmail', '$edtFone', '$edtCelular1', '$edtCelular2',
-								'$edtOperadora1', '$edtOperadora2', '$selTipoFone', '$selRedeSoc', '$edtRedeSoc',
-								'$edtProfissao', '$edtTrabalho', '$edtDtAdmis', '$edtFoneTrab', '$edtEndTrabalho', '$edtTipoEndTrabalho', 
-								'$edtNumTrabalho', '$edtComTrabalho', '$selEstadoTrab', '$selCidadeTrab', '$selBairroTrab', '$edtCepTrab', 
-								'$edtRenda', '$edtOtRendas',
-								'$selBanco', '$edtAgencia', '$edtConta', '$edtTipoConta', '$edtDtAbet', '$edtExtras', 
-								'S', 'N', '$date', '', '$hora', '$ljcod', '$acelogin',
-								'$selTipoDoc', '$edtUf', '$selPaisDoc', '$selTipoComp', '$selTipoRenda',
-								'$edtFonaAge','$edtNumBanco','$edtAgencia', '$edtTelRef1', '$edtTelRef2','$edtNomeRef1','$edtNomeRef2', '$edtPatrim' ");
+		$cadastra -> setDados(" '$edtCgcCpf', '', '$edtRazao', '$tipoCli',
+		 						'$edtInscr', '$edtOrgEm', '$edtDtEm','$selSex', 
+		 						'$edtDtNasc', '$selNatu', '$selNacio', '$selTime', 
+		 						'$selEstCiv', '$edtConjuge', '$edtPai', '$edtMae', 
+		 						'$edtQtFi', '$edtEnd', '$edtTipoEnde', '$edtNum', 
+		 						'$edtCompt', '$edtTipRes', '$edtResDesd', '$edtEstado', 
+		 						'$edtCidade','$edtCidadedesc', '$edtBairro', '$edtCep',
+		 						'$edtPontRef', '$edtEndEntrega', '$edtEmail', '$edtFone', 
+		 						'$edtCelular1', '$edtCelular2', '$edtOperadora1', '$edtOperadora2',
+		 						'$selTipoFone', '$selRedeSoc', '$edtRedeSoc', '$profissaoCod',
+		 						'$profissaoDes', '$selOcupacao','$edtTrabalho', '$edtDtAdmis', 
+		 						'$edtFoneTrab', '$edtEndTrabalho', '$edtTipoEndTrabalho', '$edtNumTrabalho', 
+		 						'$edtComTrabalho', '$selEstadoTrab', '$selCidadeTrabDes','$selCidadeTrabDes', 
+		 						'$selBairroTrabDes', '$edtCepTrab', '$edtRenda', '$edtOtRendas',
+								'$selBanco', '$edtAgencia', '$edtConta', '$edtTipoConta', 
+								'$edtDtAbet', '$edtExtras', 'S', 'N', 
+								'$date', '', '$hora', '$ljcod',
+								'$acelogin', '$selTipoDoc', '$edtUf', '$selPaisDoc', 
+								'$selTipoComp', '$selTipoRenda', '$edtFonaAge','$edtNumBanco',
+								'$edtAgencia', '$edtTelRef1', '$edtTelRef2','$edtNomeRef1',
+								'$edtNomeRef2', '$edtPatrim', '$edtBairrodesc' ");
 		$cadastra -> insert();
 		// mandando um email
 		//$sendEmail -> sendEmail($ljcod, $edtEmail, $edtRazao);

@@ -7,10 +7,12 @@ $globalCodigoGrupoCanal = "0008.001"; // Disponibilizado pelo Santander
 $globalNumeroIntermediario = "198710"; // Disponibilizado pelo Santander
 
 // para o teste funcionar usar este link 
-$globalEnderecoEndPointProposta = "https://afc.santanderfinanciamentos.com.br:443/afc-services/FinanciamentosOnlineEndpointService";
-$globalEnderecoEndPointDominio = "https://afc.santanderfinanciamentos.com.br:443/afc-services/DominiosEndpointService";
+//$globalEnderecoEndPointProposta = "https://afc.santanderfinanciamentos.com.br:443/afc-services/FinanciamentosOnlineEndpointService";
+//$globalEnderecoEndPointProposta ="https://afc.santanderfinanciamentos.com.br/afc-services/FinanciamentosOnlineEndpointService/FinanciamentosOnlineEndpointService.wsdl";
+//$globalEnderecoEndPointDominio = "https://afc.santanderfinanciamentos.com.br:443/afc-services/DominiosEndpointService";
 
-//$globalEnderecoEndPointProposta = "https://aceiteparcerias.santanderfinanciamentos.com.br/afc-services/FinanciamentosOnlineEndpointService/FinanciamentosOnlineEndpointService.wsdl";
+$globalEnderecoEndPointProposta = "https://aceiteparcerias.santanderfinanciamentos.com.br/afc-services/FinanciamentosOnlineEndpointService/FinanciamentosOnlineEndpointService.wsdl";
+$globalEnderecoEndPointDominio  = "https://aceiteparcerias.santanderfinanciamentos.com.br/afc-services/DominiosEndpointService/DominiosEndpointService.wsdl";
 
 @define(usuario, $globalUsuario);
 @define(Key , $globalKey);

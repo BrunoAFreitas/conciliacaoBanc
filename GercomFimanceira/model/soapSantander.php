@@ -85,7 +85,7 @@ class clsSantanderSoap {
 			$chamada -> addChild($key, $val, "");
 		endwhile;
  
-		//echo $this -> _xml = $xml -> asXML();
+		echo $this -> _xml = $xml -> asXML();
 		$this->_xml = $xml->asXML();
 
 	}

@@ -65,10 +65,15 @@ class consultarFinanceira extends crud {
 		return $date;
 	}
 	
-	public function extrairDDD($fone){
-		$fone = explode(")", $fone);
-		$fone = explode("(", $fone[0]);
-		return $fone[1];
+	public function extrairDDD($fone, $ddd = 's'){
+		$fonec = explode(")", $fone);
+		$fone = explode("(", $fonec[0]);
+		if($ddd == 's'){
+			return $fone[1];
+		}else{
+
+			return $fonec[1];
+		}
 		
 	}
 
@@ -133,14 +138,14 @@ class consultarFinanceira extends crud {
 		$dataAdmissao             = $this -> form -> muda_data_pt($cliente['cli_dtadmtrab']);//date
 		$dataEmissaoDocumento     = $this -> form -> muda_data_pt($cliente['cli_rgdtemissao']);//date Mudar para padrão nascional
 		$dataNascimento           = $this -> form -> muda_data_pt($cliente['cli_dtnasc']);//date
-		$descricaoNaturalidade    = 'Bela Cruz';//$cliente['cli_naturalidade'];//40d
-		$descricaoProfissao       = 'Oleiro';//$cliente['cli_profissao'];//40d
+		$descricaoNaturalidade    = $cliente['cli_naturalidade'];//40d
+		$descricaoProfissao       = $cliente['cli_profissao'];//40d
 		$nomeCompleto             = $cliente['cli_razao'];//60d
 		//nomeEmpresa
 		$nomeOrgaoEmissor         = $cliente['cli_rgemissor'];//5d
 		$nomeMae                  = $cliente['cli_mae'];//60d
 		$nomePai    			  = $cliente['cli_pai'];//60d
-		$numeroCnpjEmpresa        = $cliente['cli_cgccpf'];//15d
+		//$numeroCnpjEmpresa        = $cliente['cli_cgccpf'];//15d
 		$numeroComprovanteRenda   = $cliente['cli_tpcomprenda'];//xx
 		$numeroCpfCnpj            = $cliente['cli_cgccpf'];//11d
 		$numeroDependentes        = $cliente['cli_qtdfilhos'];//3d
@@ -164,7 +169,7 @@ class consultarFinanceira extends crud {
 													$codigoTipoPessoa, $dataAdmissao, $dataEmissaoDocumento, $dataNascimento, 
 													$descricaoNaturalidade, $descricaoProfissao,  
 													$nomeCompleto, $nomeEmpresa, $nomeOrgaoEmissor, 
-													$nomeMae, $nomePai, $numeroCnpjEmpresa, $numeroComprovanteRenda, $numeroCpfCnpj, 
+													$nomeMae, $nomePai,  $numeroComprovanteRenda, $numeroCpfCnpj, 
 													$numeroDependentes, $numeroEstadoCivil, $numeroProfissao, 
 													$numeroRenda, $numeroTipoDocumento, $valorOutrasRendas, $valorPatrimonio, 
 													$valorRendaMensal,$numeroInstrucao,$indicativoDeficienteFisico,$numeroOcupacao);
@@ -210,8 +215,8 @@ class consultarFinanceira extends crud {
 		$descricaoEnderecoComercial       = $cliente['cli_endtrab'];//60d
 		$descricaoEnderecoResidencia 	  = $cliente['cli_end'];//50d
 		$descricaoEnderecoEmail 		  = $cliente['cli_email'];//50d
-		$descricaoTelComercial 			  = $cliente['cli_fonetrab'];//10d
-		$descricaotelResidencial 		  = $cliente['cli_fone'];//10d
+		$descricaoTelComercial 			  = $this -> extrairDDD($cliente['cli_fonetrab'],'n');//10d
+		$descricaotelResidencial 		  = $this -> extrairDDD($cliente['cli_fone'],'n');//10d
 		$nomeBairroComercial              = $cliente['cli_bairrotrab'];//20d
 		$nomeBairroResidencial 			  = $cliente['cli_bairro'];//20d
 		$nomeCidadeComercial              = $cliente['cli_cidadetrab'];//20d
@@ -256,18 +261,18 @@ class consultarFinanceira extends crud {
 		$dddbanc = $this -> extrairDDD($cliente['cli_telbanco']);
 		$desde   = $this -> extrairAnoMes($cliente['cli_dtaberturaconta']);
 		
-		$codigoDigitoAgencia       = $this->extrairDigito($cliente['cli_agencia'],1);//1d
-		$codigoDigitoContaCorrente = $this->extrairDigito($cliente['cli_conta'],1);//1d
+		$codigoDigitoAgencia       = $cliente['cli_digitoagencia'];//1d
+		$codigoDigitoContaCorrente = $cliente['cli_digitoconta'];//1d
 		$codigoTipoContaBancaria   = $cliente['cli_tipoconta'];//1d
-		$descricaoTelefoneBanco    = $cliente['cli_telbanco'];//10d
-		$descricaoTelefoneRefer1   = $cliente['cli_telref1'];//10d
-		$descricaoTelefoneRefer2   = $cliente['cli_telref1'];//10d
+		$descricaoTelefoneBanco    = $this->extrairDDD($cliente['cli_telbanco'],'n');//10d
+		$descricaoTelefoneRefer1   = $this->extrairDDD($cliente['cli_telref1'],'n');//10d
+		$descricaoTelefoneRefer2   = $this->extrairDDD($cliente['cli_telref1'],'n');//10d
 		$nomeRefer1                = $cliente['cli_nomeref1'];
 		$nomeRefer2                = $cliente['cli_nomeref2'];//50d
-		$numeroAgencia             = '043';//$cliente['cli_numeroagenc'];//5d
-		$numeroAnoClienteDesde     =  '1994';//$desde[0];//4d
-		$numeroBanco               = '033';//$cliente['cli_numerobanco'];//3d
-		$numeroContaCorrente       = '10103359';//$cliente['cli_conta'];//8d
+		$numeroAgencia             = $cliente['cli_numeroagenc'];//5d
+		$numeroAnoClienteDesde     = $desde[0];//4d
+		$numeroBanco               = $cliente['cli_numerobanco'];//3d
+		$numeroContaCorrente       = $cliente['cli_conta'];//8d
 		$numeroDddRefer1           = $dddref1;//3d
 		$numeroDddRefer2           = $dddref2;//3d
 		$numeroDddTelefoneBanco    = $dddbanc;//3d 

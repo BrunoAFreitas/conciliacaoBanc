@@ -1,0 +1,161 @@
+<pre>Array
+(
+    [codigoFormaPagamento] => CA
+    [dataEntregaBem] => 26/05/2014
+    [codigoTipoMoeda] => PRE
+    [nomeVendedor] => Akarlos Vasconcelos
+    [numeroIdProduto] => 0206
+    [numeroQuantidadePrestacoes] => 36
+    [codigoModalidade] => P
+    [numeroTabelaFinanciamento] => 55785
+    [numeroVendedor] => 13
+    [indicadorTac] => N
+    [isencaoTC] => S
+    [isencaoTAB] => N
+    [textoControleLoja] => teste do sistema..
+    [textoObsLoja] => Teste do sistema...
+    [valorBem] => 20.000,00
+    [valorEntrada] => 10.000,00
+    [valorFinanciamento] => 10.000,00
+    [valorPrestacao] => 277,80
+    [dataVencimento1] => 25/06/2014
+)
+<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/"><soapenv:Header><token:security xmlns:token="http://santander-fo"><username xmlns="">madeireira</username><key xmlns="">89564B999337A671</key><cnpj xmlns="">03875890000173</cnpj><codigoGrupoCanal xmlns="">0008.001</codigoGrupoCanal><numeroIntermediario xmlns="">198710</numeroIntermediario></token:security></soapenv:Header><soapenv:Body><impl:enviaPropostaFinanciamentoVeiculoPasso1Inicio xmlns:impl="http://santander-fo"><chamada xmlns=""><codigoFormaPagamento xmlns="">CA</codigoFormaPagamento><dataEntregaBem xmlns="">26/05/2014</dataEntregaBem><codigoTipoMoeda xmlns="">PRE</codigoTipoMoeda><nomeVendedor xmlns="">Akarlos Vasconcelos</nomeVendedor><numeroIdProduto xmlns="">0206</numeroIdProduto><numeroQuantidadePrestacoes xmlns="">36</numeroQuantidadePrestacoes><codigoModalidade xmlns="">P</codigoModalidade><numeroTabelaFinanciamento xmlns="">55785</numeroTabelaFinanciamento><numeroVendedor xmlns="">13</numeroVendedor><indicadorTac xmlns="">N</indicadorTac><isencaoTC xmlns="">S</isencaoTC><isencaoTAB xmlns="">N</isencaoTAB><textoControleLoja xmlns="">teste do sistema..</textoControleLoja><textoObsLoja xmlns="">Teste do sistema...</textoObsLoja><valorBem xmlns="">20.000,00</valorBem><valorEntrada xmlns="">10.000,00</valorEntrada><valorFinanciamento xmlns="">10.000,00</valorFinanciamento><valorPrestacao xmlns="">277,80</valorPrestacao><dataVencimento1 xmlns="">25/06/2014</dataVencimento1><numeroIntermediario xmlns="">198710</numeroIntermediario></chamada></impl:enviaPropostaFinanciamentoVeiculoPasso1Inicio></soapenv:Body></soapenv:Envelope>
+<?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><dlwmin:enviaPropostaFinanciamentoVeiculoPasso1InicioResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/"><inserePropostaResponse><codigoErro></codigoErro><codigoRetorno>00</codigoRetorno><descricaoErro></descricaoErro><numeroPropostaAdp>0043204182</numeroPropostaAdp></inserePropostaResponse></dlwmin:enviaPropostaFinanciamentoVeiculoPasso1InicioResponse></soapenv:Body></soapenv:Envelope><pre>Array
+(
+    [numeroTipoVinculoPart] => 1
+    [numeroPropostaAdp] => SimpleXMLElement Object
+        (
+            [0] => 0043204182
+        )
+
+    [codigoDocumento] => 20075043747
+    [codigoEstadoNaturalidade] => CE
+    [codigoEstadoOrgaoEmissor] => CE
+    [codigoNacionalidade] => 0
+    [codigoPaisDocumento] => BR
+    [codigoSedePropria] => 
+    [codigoSexo] => M
+    [codigoTipoPessoa] => F
+    [dataAdmissao] => 02/02/2012
+    [dataEmissaoDocumento] => 12/04/2010
+    [dataNascimento] => 13/06/1994
+    [descricaoNaturalidade] =>  FORTALEZA
+    [descricaoProfissao] => PROGRAMADOR
+    [nomeCompleto] => Bruno Araujo Freitas
+    [nomeEmpresa] => Bruno Araujo Freitas
+    [nomeOrgaoEmissor] => ssp
+    [nomeMae] => Rita Francilene Araujo
+    [nomePai] => Francisco De Assis Freitas
+    [numeroCnpjEmpresa] => 05754853378
+    [numeroComprovanteRenda] => 02
+    [numeroCpfCnpj] => 05754853378
+    [numeroDependentes] => 0
+    [numeroEstadoCivil] => 1
+    [numeroProfissao] => 70
+    [numeroRenda] => 1
+    [numeroTipoDocumento] => 01
+    [valorOutrasRendas] => 0
+    [valorPatrimonio] => 10.000,00
+    [valorRendaMensal] => 00.930,00
+    [numeroInstrucao] => 01
+    [indicativoDeficienteFisico] => N
+    [numeroOcupacao] => 01
+)
+<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/"><soapenv:Header><token:security xmlns:token="http://santander-fo"><username xmlns="">madeireira</username><key xmlns="">89564B999337A671</key><cnpj xmlns="">03875890000173</cnpj><codigoGrupoCanal xmlns="">0008.001</codigoGrupoCanal><numeroIntermediario xmlns="">198710</numeroIntermediario></token:security></soapenv:Header><soapenv:Body><impl:enviaPropostaFinanciamentoVeiculoPasso2DadosPessoais xmlns:impl="http://santander-fo"><chamada xmlns=""><numeroTipoVinculoPart xmlns="">1</numeroTipoVinculoPart><numeroPropostaAdp xmlns="">0043204182</numeroPropostaAdp><codigoDocumento xmlns="">20075043747</codigoDocumento><codigoEstadoNaturalidade xmlns="">CE</codigoEstadoNaturalidade><codigoEstadoOrgaoEmissor xmlns="">CE</codigoEstadoOrgaoEmissor><codigoNacionalidade xmlns="">0</codigoNacionalidade><codigoPaisDocumento xmlns="">BR</codigoPaisDocumento><codigoSedePropria xmlns=""></codigoSedePropria><codigoSexo xmlns="">M</codigoSexo><codigoTipoPessoa xmlns="">F</codigoTipoPessoa><dataAdmissao xmlns="">02/02/2012</dataAdmissao><dataEmissaoDocumento xmlns="">12/04/2010</dataEmissaoDocumento><dataNascimento xmlns="">13/06/1994</dataNascimento><descricaoNaturalidade xmlns=""> FORTALEZA</descricaoNaturalidade><descricaoProfissao xmlns="">PROGRAMADOR</descricaoProfissao><nomeCompleto xmlns="">Bruno Araujo Freitas</nomeCompleto><nomeEmpresa xmlns="">Bruno Araujo Freitas</nomeEmpresa><nomeOrgaoEmissor xmlns="">ssp</nomeOrgaoEmissor><nomeMae xmlns="">Rita Francilene Araujo</nomeMae><nomePai xmlns="">Francisco De Assis Freitas</nomePai><numeroCnpjEmpresa xmlns="">05754853378</numeroCnpjEmpresa><numeroComprovanteRenda xmlns="">02</numeroComprovanteRenda><numeroCpfCnpj xmlns="">05754853378</numeroCpfCnpj><numeroDependentes xmlns="">0</numeroDependentes><numeroEstadoCivil xmlns="">1</numeroEstadoCivil><numeroProfissao xmlns="">70</numeroProfissao><numeroRenda xmlns="">1</numeroRenda><numeroTipoDocumento xmlns="">01</numeroTipoDocumento><valorOutrasRendas xmlns="">0</valorOutrasRendas><valorPatrimonio xmlns="">10.000,00</valorPatrimonio><valorRendaMensal xmlns="">00.930,00</valorRendaMensal><numeroInstrucao xmlns="">01</numeroInstrucao><indicativoDeficienteFisico xmlns="">N</indicativoDeficienteFisico><numeroOcupacao xmlns="">01</numeroOcupacao></chamada></impl:enviaPropostaFinanciamentoVeiculoPasso2DadosPessoais></soapenv:Body></soapenv:Envelope>
+<?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><dlwmin:enviaPropostaFinanciamentoVeiculoPasso2DadosPessoaisResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/"><dadosPessoaisResponse><codigoErro></codigoErro><codigoRetorno>00</codigoRetorno><descricaoErro></descricaoErro><dadosPessoais><numeroInternoCliente>00000001</numeroInternoCliente></dadosPessoais></dadosPessoaisResponse></dlwmin:enviaPropostaFinanciamentoVeiculoPasso2DadosPessoaisResponse></soapenv:Body></soapenv:Envelope><pre>Array
+(
+    [numeroPropostaAdp] => SimpleXMLElement Object
+        (
+            [0] => 0043204182
+        )
+
+    [numeroClienteInterno] => SimpleXMLElement Object
+        (
+            [0] => 00000001
+        )
+
+    [codigoEnderecoCorrespondencia] => R
+    [codigoPaisComercial] => BR
+    [codigoPaisResidencial] => BR
+    [codigoSiglaUfComercial] => CE
+    [codigoSiglaUfResidencial] => CE
+    [dataAnoResideDesde] => 2005
+    [dataMesResideDesde] => 02
+    [descricaoComplementoEndComercial] => 
+    [descricaoComplementoResidencia] => Proximo a cagece
+    [descricaoEnderecoComercial] => rodovia 402
+    [descricaoEnderecoResidencia] => Rua Padre Cicero
+    [descricaoEnderecoEmail] => bruno_araujo@hotmail.com
+    [descricaoTelComercial] => (88) 3664-18
+    [descricaotelResidencial] => (88) 3664-18
+    [nomeBairroComercial] => ALEMAES
+    [nomeBairroResidencial] => CENTRO
+    [nomeCidadeComercial] => MARCO
+    [nomeCidadeResidencial] => MARCO
+    [numeroCepComercial] => 62.560-000
+    [numeroCepResidencial] => 62.560-000
+    [numeroDddCel] => 88
+    [numeroDddResidencial] => 88
+    [numeroDddTelComercial] => 88
+    [numeroEnderecoComercial] => 0000
+    [numeroResidencial] => 0019
+    [numeroTipoResidencia] => 1
+    [numeroTipoTelefResiden] => 2
+)
+<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/"><soapenv:Header><token:security xmlns:token="http://santander-fo"><username xmlns="">madeireira</username><key xmlns="">89564B999337A671</key><cnpj xmlns="">03875890000173</cnpj><codigoGrupoCanal xmlns="">0008.001</codigoGrupoCanal><numeroIntermediario xmlns="">198710</numeroIntermediario></token:security></soapenv:Header><soapenv:Body><impl:enviaPropostaFinanciamentoVeiculoPasso3Endereco xmlns:impl="http://santander-fo"><chamada xmlns=""><numeroPropostaAdp xmlns="">0043204182</numeroPropostaAdp><numeroClienteInterno xmlns="">00000001</numeroClienteInterno><codigoEnderecoCorrespondencia xmlns="">R</codigoEnderecoCorrespondencia><codigoPaisComercial xmlns="">BR</codigoPaisComercial><codigoPaisResidencial xmlns="">BR</codigoPaisResidencial><codigoSiglaUfComercial xmlns="">CE</codigoSiglaUfComercial><codigoSiglaUfResidencial xmlns="">CE</codigoSiglaUfResidencial><dataAnoResideDesde xmlns="">2005</dataAnoResideDesde><dataMesResideDesde xmlns="">02</dataMesResideDesde><descricaoComplementoEndComercial xmlns=""></descricaoComplementoEndComercial><descricaoComplementoResidencia xmlns="">Proximo a cagece</descricaoComplementoResidencia><descricaoEnderecoComercial xmlns="">rodovia 402</descricaoEnderecoComercial><descricaoEnderecoResidencia xmlns="">Rua Padre Cicero</descricaoEnderecoResidencia><descricaoEnderecoEmail xmlns="">bruno_araujo@hotmail.com</descricaoEnderecoEmail><descricaoTelComercial xmlns="">(88) 3664-18</descricaoTelComercial><descricaotelResidencial xmlns="">(88) 3664-18</descricaotelResidencial><nomeBairroComercial xmlns="">ALEMAES</nomeBairroComercial><nomeBairroResidencial xmlns="">CENTRO</nomeBairroResidencial><nomeCidadeComercial xmlns="">MARCO</nomeCidadeComercial><nomeCidadeResidencial xmlns="">MARCO</nomeCidadeResidencial><numeroCepComercial xmlns="">62.560-000</numeroCepComercial><numeroCepResidencial xmlns="">62.560-000</numeroCepResidencial><numeroDddCel xmlns="">88</numeroDddCel><numeroDddResidencial xmlns="">88</numeroDddResidencial><numeroDddTelComercial xmlns="">88</numeroDddTelComercial><numeroEnderecoComercial xmlns="">0000</numeroEnderecoComercial><numeroResidencial xmlns="">0019</numeroResidencial><numeroTipoResidencia xmlns="">1</numeroTipoResidencia><numeroTipoTelefResiden xmlns="">2</numeroTipoTelefResiden></chamada></impl:enviaPropostaFinanciamentoVeiculoPasso3Endereco></soapenv:Body></soapenv:Envelope>
+<?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><dlwmin:enviaPropostaFinanciamentoVeiculoPasso3EnderecoResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/"><insereEnderecoResponse><codigoErro></codigoErro><codigoRetorno>00</codigoRetorno><descricaoErro></descricaoErro></insereEnderecoResponse></dlwmin:enviaPropostaFinanciamentoVeiculoPasso3EnderecoResponse></soapenv:Body></soapenv:Envelope>ok<pre>Array
+(
+    [numeroPropostaAdp] => SimpleXMLElement Object
+        (
+            [0] => 0043204182
+        )
+
+    [codigoDigitoAgencia] => 0
+    [codigoDigitoContaCorrente] => 4
+    [codigoTipoContaBancaria] => C
+    [descricaoTelefoneBanco] => (88)3664-1212
+    [descricaoTelefoneRefer1] => (88) 9735-3539
+    [descricaoTelefoneRefer2] => (88) 9735-3539
+    [nomeRefer1] => Akarlos Vasconcelos
+    [nomeRefer2] => Jalen Fabio
+    [numeroAgencia] => 2273
+    [numeroAnoClienteDesde] => 2012
+    [numeroBanco] => 1
+    [numeroContaCorrente] => 189294
+    [numeroDddRefer1] => 88
+    [numeroDddRefer2] => 88
+    [numeroDddTelefoneBanco] => 88
+    [numeroMesClienteDesde] => 02
+    [numeroClienteInterno] => SimpleXMLElement Object
+        (
+            [0] => 00000001
+        )
+
+    [numeroClienteRelacional] => SimpleXMLElement Object
+        (
+            [0] => 00000001
+        )
+
+    [descricaoEndRefer1] => 40032001
+    [descricaoEndRefer2] => 623456789
+)
+<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/"><soapenv:Header><token:security xmlns:token="http://santander-fo"><username xmlns="">madeireira</username><key xmlns="">89564B999337A671</key><cnpj xmlns="">03875890000173</cnpj><codigoGrupoCanal xmlns="">0008.001</codigoGrupoCanal><numeroIntermediario xmlns="">198710</numeroIntermediario></token:security></soapenv:Header><soapenv:Body><impl:enviaPropostaFinanciamentoVeiculoPasso4Referencias xmlns:impl="http://santander-fo"><chamada xmlns=""><numeroPropostaAdp xmlns="">0043204182</numeroPropostaAdp><codigoDigitoAgencia xmlns="">0</codigoDigitoAgencia><codigoDigitoContaCorrente xmlns="">4</codigoDigitoContaCorrente><codigoTipoContaBancaria xmlns="">C</codigoTipoContaBancaria><descricaoTelefoneBanco xmlns="">(88)3664-1212</descricaoTelefoneBanco><descricaoTelefoneRefer1 xmlns="">(88) 9735-3539</descricaoTelefoneRefer1><descricaoTelefoneRefer2 xmlns="">(88) 9735-3539</descricaoTelefoneRefer2><nomeRefer1 xmlns="">Akarlos Vasconcelos</nomeRefer1><nomeRefer2 xmlns="">Jalen Fabio</nomeRefer2><numeroAgencia xmlns="">2273</numeroAgencia><numeroAnoClienteDesde xmlns="">2012</numeroAnoClienteDesde><numeroBanco xmlns="">1</numeroBanco><numeroContaCorrente xmlns="">189294</numeroContaCorrente><numeroDddRefer1 xmlns="">88</numeroDddRefer1><numeroDddRefer2 xmlns="">88</numeroDddRefer2><numeroDddTelefoneBanco xmlns="">88</numeroDddTelefoneBanco><numeroMesClienteDesde xmlns="">02</numeroMesClienteDesde><numeroClienteInterno xmlns="">00000001</numeroClienteInterno><numeroClienteRelacional xmlns="">00000001</numeroClienteRelacional><descricaoEndRefer1 xmlns="">40032001</descricaoEndRefer1><descricaoEndRefer2 xmlns="">623456789</descricaoEndRefer2></chamada></impl:enviaPropostaFinanciamentoVeiculoPasso4Referencias></soapenv:Body></soapenv:Envelope>
+<?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><dlwmin:enviaPropostaFinanciamentoVeiculoPasso4ReferenciasResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/"><insereReferenciaResponse><codigoErro></codigoErro><codigoRetorno>00</codigoRetorno><descricaoErro></descricaoErro></insereReferenciaResponse></dlwmin:enviaPropostaFinanciamentoVeiculoPasso4ReferenciasResponse></soapenv:Body></soapenv:Envelope>ok<pre>Array
+(
+    [numeroProposta] => SimpleXMLElement Object
+        (
+            [0] => 0043204182
+        )
+
+    [codigoGarantia] => 01
+    [codigoObjFinanciado] => MO
+    [descricaoModelo] => CD-130
+)
+<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/"><soapenv:Header><token:security xmlns:token="http://santander-fo"><username xmlns="">madeireira</username><key xmlns="">89564B999337A671</key><cnpj xmlns="">03875890000173</cnpj><codigoGrupoCanal xmlns="">0008.001</codigoGrupoCanal><numeroIntermediario xmlns="">198710</numeroIntermediario></token:security></soapenv:Header><soapenv:Body><impl:enviaPropostaFinanciamentoVeiculoPasso5Garantias xmlns:impl="http://santander-fo"><chamada xmlns=""><numeroProposta xmlns="">0043204182</numeroProposta><codigoGarantia xmlns="">01</codigoGarantia><codigoObjFinanciado xmlns="">MO</codigoObjFinanciado><descricaoModelo xmlns="">CD-130</descricaoModelo></chamada></impl:enviaPropostaFinanciamentoVeiculoPasso5Garantias></soapenv:Body></soapenv:Envelope>
+Error: Operation timed out after 30641 milliseconds with 0 out of -1 bytes received
