@@ -6,13 +6,12 @@ $globalCnpj = "03875890000173"; // CNPJ (somente n�meros)
 $globalCodigoGrupoCanal = "0008.001"; // Disponibilizado pelo Santander
 $globalNumeroIntermediario = "198710"; // Disponibilizado pelo Santander
 
-// para o teste funcionar usar este link 
-//$globalEnderecoEndPointProposta = "https://afc.santanderfinanciamentos.com.br:443/afc-services/FinanciamentosOnlineEndpointService";
-//$globalEnderecoEndPointProposta ="https://afc.santanderfinanciamentos.com.br/afc-services/FinanciamentosOnlineEndpointService/FinanciamentosOnlineEndpointService.wsdl";
-//$globalEnderecoEndPointDominio = "https://afc.santanderfinanciamentos.com.br:443/afc-services/DominiosEndpointService";
+$globalEnderecoEndPointProposta = "https://afc.santanderfinanciamentos.com.br:443/afc-services/FinanciamentosOnlineEndpointService";//producao
+//$globalEnderecoEndPointProposta = "https://afc.santanderfinanciamentos.com.br/afc-services/FinanciamentosOnlineEndpointService/FinanciamentosOnlineEndpointService.wsdl";//EndPoint Producao
+$globalEnderecoEndPointDominio =  "https://afc.santanderfinanciamentos.com.br:443/afc-services/DominiosEndpointService";//dominio Producao
 
-$globalEnderecoEndPointProposta = "https://aceiteparcerias.santanderfinanciamentos.com.br/afc-services/FinanciamentosOnlineEndpointService/FinanciamentosOnlineEndpointService.wsdl";
-$globalEnderecoEndPointDominio  = "https://aceiteparcerias.santanderfinanciamentos.com.br/afc-services/DominiosEndpointService/DominiosEndpointService.wsdl";
+//$globalEnderecoEndPointProposta = "https://aceiteparcerias.santanderfinanciamentos.com.br:443/afc-services/FinanciamentosOnlineEndpointService";//EndPoint Homologacao
+//$globalEnderecoEndPointDominio  = "https://aceiteparcerias.santanderfinanciamentos.com.br:443/afc-services/DominiosEndpointService";//dominio Homologacao
 
 @define(usuario, $globalUsuario);
 @define(Key , $globalKey);

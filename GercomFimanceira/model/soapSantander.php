@@ -109,7 +109,6 @@ class clsSantanderSoap {
 		}
 
 		return $retorno;
-
 	}
 
 	public function XMLtoArray($xml = null) {
