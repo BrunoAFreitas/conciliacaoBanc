@@ -1,5 +1,0 @@
-<xsl:stylesheet version = "1.0"  xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/">
-	<xls:template match = "Body">
-		<h1> Nome: <xls:value-of select ="enviaPropostaFinanciamentoVeiculoPasso2DadosPessoais"/> </h1>
-	</xls:template>
-<xls:stylesheet>
