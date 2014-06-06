@@ -10,7 +10,7 @@ $globalEnderecoEndPointProposta = "https://afc.santanderfinanciamentos.com.br:44
 //$globalEnderecoEndPointProposta = "https://afc.santanderfinanciamentos.com.br/afc-services/FinanciamentosOnlineEndpointService/FinanciamentosOnlineEndpointService.wsdl";//EndPoint Producao
 $globalEnderecoEndPointDominio =  "https://afc.santanderfinanciamentos.com.br:443/afc-services/DominiosEndpointService";//dominio Producao
 
-//$globalEnderecoEndPointProposta = "https://aceiteparcerias.santanderfinanciamentos.com.br:443/afc-services/FinanciamentosOnlineEndpointService";//EndPoint Homologacao
+//$globalEnderecoEndPointProposta = "https://aceiteparcerias.santanderfinanciamentos.com.br/afc-services/FinanciamentosOnlineEndpointService";//EndPoint Homologacao
 //$globalEnderecoEndPointDominio  = "https://aceiteparcerias.santanderfinanciamentos.com.br:443/afc-services/DominiosEndpointService";//dominio Homologacao
 
 @define(usuario, $globalUsuario);

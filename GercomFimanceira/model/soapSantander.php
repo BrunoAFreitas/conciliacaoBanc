@@ -56,8 +56,10 @@ class clsSantanderSoap {
 		// Usar compressao
 
 		// Executa a requisição
-		echo $this -> _xmlResposta = curl_exec($ch);
+		$this -> _xmlResposta = curl_exec($ch);
 		//$this->_xmlResposta = curl_exec($ch);
+
+
 
 		if (curl_errno($ch)) {
 			echo "Error: ",  curl_error($ch);
@@ -85,7 +87,7 @@ class clsSantanderSoap {
 			$chamada -> addChild($key, $val, "");
 		endwhile;
  
-		echo $this -> _xml = $xml -> asXML();
+		//echo $this -> _xml = $xml -> asXML();
 		$this->_xml = $xml->asXML();
 
 	}

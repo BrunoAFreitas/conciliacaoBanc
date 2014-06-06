@@ -3,7 +3,7 @@
  * A classe consultarFinanceira e reponsavel por criar e acoplar os 6 passos do financiamento
  * Execultando um atraz do outro sempre que não cair em exection. 
  */
-
+include_once("../controller/imprimeCETPDF.php");
 // para a conexao com o banco de dado do gercom 
 include_once("../model/crud.php");
 // passo 1
@@ -28,7 +28,7 @@ class consultarFinanceira extends crud {
 	// para identificação do cliente
 	private $idCliente;
 	// variavel para todos os passos
-	private $numeroProposta;
+	public $numeroProposta;
 	// varivel de proposta passo dois
 	private $nrInterveniente;
 	// Array bd
@@ -41,6 +41,10 @@ class consultarFinanceira extends crud {
 		$this -> idCliente = $idCliente;
 		$this -> clienteBD = $this ->cliente();
 		$this -> form = new forms();
+
+	}
+	public function getNumProposta(){
+		return $this->numeroProposta;
 	}
 
 	// metodo para setar as msg
@@ -59,7 +63,7 @@ class consultarFinanceira extends crud {
 		$cliente = mysql_fetch_array(self::ListaTable('*','clientes',"cli_cgccpf = '". $this->idCliente ."'"));
 		return $cliente;	
 	}
-	
+
 	public function extrairAnoMes($date){
 		$date = explode('-',$date);
 		return $date;
@@ -147,7 +151,7 @@ class consultarFinanceira extends crud {
 		$nomePai    			  = $cliente['cli_pai'];//60d
 		//$numeroCnpjEmpresa        = $cliente['cli_cgccpf'];//15d
 		$numeroComprovanteRenda   = $cliente['cli_tpcomprenda'];//xx
-		$numeroCpfCnpj            = $cliente['cli_cgccpf'];//11d
+		$numeroCpfCnpj            = "300.300.300-30";//$cliente['cli_cgccpf'];//11d
 		$numeroDependentes        = $cliente['cli_qtdfilhos'];//3d
 		$numeroEstadoCivil        = $cliente['cli_estadocivil'];//2d
 		$numeroProfissao          = $cliente['cli_profissaocod'];//5d
@@ -165,7 +169,7 @@ class consultarFinanceira extends crud {
 		$codigoSedePropria = $cliente['cli_sedepropria'];//1d
 
 			$interveniente = new criarInterveniente($numeroTipoVinculoPart,$numeroPropostaAdp, $codigoDocumento, $codigoEstadoNaturalidade, $codigoEstadoOrgaoEmissor, 
-													$codigoNacionalidade, $codigoPaisDocumento, $codigoSedePropria, $codigoSexo, 
+													$codigoNacionalidade, $codigoPaisDocumento,  $codigoSexo, 
 													$codigoTipoPessoa, $dataAdmissao, $dataEmissaoDocumento, $dataNascimento, 
 													$descricaoNaturalidade, $descricaoProfissao,  
 													$nomeCompleto, $nomeEmpresa, $nomeOrgaoEmissor, 
@@ -243,7 +247,7 @@ class consultarFinanceira extends crud {
 		
 		if($endereco->codigoRetorno == "00") {
 			// ok pode ir para o proximo passo
-			echo "ok";
+			//echo "ok";
 		} else {
 			// algo deu errado verificar dados
 			echo "<br/>";
@@ -291,7 +295,7 @@ class consultarFinanceira extends crud {
 		$referencia->executa(); 
 		
 		if($referencia->codigoRetorno == "00") {
-			echo "ok";
+			//echo "ok";
 		} else {
 			echo "<br/>";
 			echo $referencia->descricaoErro;
@@ -313,7 +317,7 @@ class consultarFinanceira extends crud {
 		
 		
 		if($garantia->codigoRetorno == "00") {
-			echo "ok";
+			//echo "ok";
 		} else {
 			echo "<br/>";
 			echo $garantia->descricaoErro;
@@ -330,15 +334,20 @@ class consultarFinanceira extends crud {
 		
 		$consolidar = new consolidarProposta( $numeroPropostaAdp );
 		$consolidar -> executa();
+
 		
-		echo  $consolidar -> dadosADP -> descricaoCor;
-		print_r( $consolidar -> dadosADP );
-	 
+		//echo  $consolidar -> dadosADP -> descricaoCor;
+		//print_r( $consolidar -> dadosADP );
+		
+		echo $retorno = $consolidar -> dadosADP -> descricaoMensagemRetorno1;
+		//echo "<script>alert('$retorno');</script>";
+		
 		if( $consolidar -> codigoRetorno == "00" ) {
-			echo "ok"; 
+			//echo "ok"; 
 		} else { 
 			echo $consolidar -> descricaoErro;
 		}
+
 	}	
 }
 ?>

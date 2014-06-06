@@ -12,11 +12,13 @@ class consolidarProposta extends carregaMetodo {
 	public function __construct( $numeroPropostaAdp ) {
 		$this -> campos = get_defined_vars();
 	}
-
+	
 	protected function getDados() {
-		echo "<pre>";
-		print_r($this -> campos);
+		//echo "<pre>";
+		//print_r($this -> campos);
 		
+		
+
 		$this -> soapSantander -> setStrImplementacao("enviaPropostaFinanciamentoVeiculoPasso6Fim");
 		while (list($key, $val) = each($this -> campos)) {  $this -> soapSantander -> setParametro($key, $val);
 		}
