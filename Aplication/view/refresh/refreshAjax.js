@@ -8,7 +8,7 @@ jQuery(document).ready(function(){
 		dados.innerHTML = '<img src="img/loading_icon.gif"/>';	
 		jQuery.ajax({
 			type: "POST",
-			url:  "teste.php",
+			url:  "../model/teste.php",
 			data: dados,
 			success: function( data )
 			{
