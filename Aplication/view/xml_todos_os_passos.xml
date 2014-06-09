@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/">
+	<soapenv:Header>
+		<token:security xmlns:token="http://santander-fo">
+			<username xmlns="">madeireira</username>
+			<key xmlns="">89564B999337A671</key>
+			<cnpj xmlns="">03875890000173</cnpj>
+			<codigoGrupoCanal xmlns="">0008.001</codigoGrupoCanal>
+			<numeroIntermediario xmlns="">198710</numeroIntermediario>
+		</token:security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<impl:enviaPropostaFinanciamentoVeiculoPasso1Inicio xmlns:impl="http://santander-fo">
+			<chamada xmlns="">
+				<codigoFormaPagamento xmlns="">CA</codigoFormaPagamento>
+				<dataEntregaBem xmlns="">25/03/2014</dataEntregaBem>
+				<codigoTipoMoeda xmlns="">PRE</codigoTipoMoeda>
+				<nomeVendedor xmlns="">Vendedor Teste</nomeVendedor>
+				<numeroIdProduto xmlns="">0206</numeroIdProduto>
+				<numeroQuantidadePrestacoes xmlns="">48</numeroQuantidadePrestacoes>
+				<codigoModalidade xmlns="">P</codigoModalidade>
+				<numeroTabelaFinanciamento xmlns="">55785</numeroTabelaFinanciamento>
+				<numeroVendedor xmlns="">13</numeroVendedor>
+				<indicadorTac xmlns="">N</indicadorTac>
+				<isencaoTC xmlns="">S</isencaoTC>
+				<isencaoTAB xmlns="">N</isencaoTAB>
+				<textoControleLoja xmlns="">teste do sistema..</textoControleLoja>
+				<textoObsLoja xmlns="">Teste do sistema...</textoObsLoja>
+				<valorBem xmlns="">80.000,00</valorBem>
+				<valorEntrada xmlns="">20.000,00</valorEntrada>
+				<valorFinanciamento xmlns="">60.000,00</valorFinanciamento>
+				<valorPrestacao xmlns="">434,08</valorPrestacao>
+				<dataVencimento1 xmlns="">24/04/2014</dataVencimento1>
+				<numeroIntermediario xmlns="">198710</numeroIntermediario>
+			</chamada>
+		</impl:enviaPropostaFinanciamentoVeiculoPasso1Inicio>
+	</soapenv:Body>
+</soapenv:Envelope>
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<dlwmin:enviaPropostaFinanciamentoVeiculoPasso1InicioResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/">
+			<inserePropostaResponse>
+				<codigoErro></codigoErro>
+				<codigoRetorno>00</codigoRetorno>
+				<descricaoErro></descricaoErro>
+				<numeroPropostaAdp>0042420681</numeroPropostaAdp>
+			</inserePropostaResponse>
+		</dlwmin:enviaPropostaFinanciamentoVeiculoPasso1InicioResponse>
+	</soapenv:Body>
+</soapenv:Envelope><?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/">
+	<soapenv:Header>
+		<token:security xmlns:token="http://santander-fo">
+			<username xmlns="">madeireira</username>
+			<key xmlns="">89564B999337A671</key>
+			<cnpj xmlns="">03875890000173</cnpj>
+			<codigoGrupoCanal xmlns="">0008.001</codigoGrupoCanal>
+			<numeroIntermediario xmlns="">198710</numeroIntermediario>
+		</token:security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<impl:enviaPropostaFinanciamentoVeiculoPasso2DadosPessoais xmlns:impl="http://santander-fo">
+			<chamada xmlns="">
+				<numeroTipoVinculoPart xmlns="">1</numeroTipoVinculoPart>
+				<numeroPropostaAdp xmlns="">0042420681</numeroPropostaAdp>
+				<codigoDocumento xmlns="">00909090999</codigoDocumento>
+				<codigoEstadoNaturalidade xmlns="">CE</codigoEstadoNaturalidade>
+				<codigoEstadoOrgaoEmissor xmlns="">CE</codigoEstadoOrgaoEmissor>
+				<codigoNacionalidade xmlns="">31</codigoNacionalidade>
+				<codigoPaisDocumento xmlns="">BR</codigoPaisDocumento>
+				<codigoSedePropria xmlns="">S</codigoSedePropria>
+				<codigoSexo xmlns="">M</codigoSexo>
+				<codigoTipoPessoa xmlns="">F</codigoTipoPessoa>
+				<dataAdmissao xmlns="">13/12/1994</dataAdmissao>
+				<dataEmissaoDocumento xmlns="">13/12/1994</dataEmissaoDocumento>
+				<dataNascimento xmlns="">13/12/1994</dataNascimento>
+				<descricaoNaturalidade xmlns="">Bela Cruz</descricaoNaturalidade>
+				<descricaoProfissao xmlns="">Oleiro</descricaoProfissao>
+				<nomeCompleto xmlns="">Nome Teste Passo Dois</nomeCompleto>
+				<nomeEmpresa xmlns="">Google</nomeEmpresa>
+				<nomeOrgaoEmissor xmlns="">SSP</nomeOrgaoEmissor>
+				<nomeMae xmlns="">Mae Teste Passo Dois</nomeMae>
+				<nomePai xmlns="">Pai Teste Passo Dois</nomePai>
+				<numeroCnpjEmpresa xmlns="">44830171000113</numeroCnpjEmpresa>
+				<numeroComprovanteRenda xmlns="">01</numeroComprovanteRenda>
+				<numeroCpfCnpj xmlns="">44830171000113</numeroCpfCnpj>
+				<numeroDependentes xmlns="">0</numeroDependentes>
+				<numeroEstadoCivil xmlns="">01</numeroEstadoCivil>
+				<numeroProfissao xmlns="">0</numeroProfissao>
+				<numeroRenda xmlns="">01</numeroRenda>
+				<numeroTipoDocumento xmlns="">01</numeroTipoDocumento>
+				<valorOutrasRendas xmlns="">100,00</valorOutrasRendas>
+				<valorPatrimonio xmlns="">100000,00</valorPatrimonio>
+				<valorRendaMensal xmlns="">10000,00</valorRendaMensal>
+				<numeroInstrucao xmlns="">01</numeroInstrucao>
+				<indicativoDeficienteFisico xmlns="">N</indicativoDeficienteFisico>
+				<numeroOcupacao xmlns="">01</numeroOcupacao>
+			</chamada>
+		</impl:enviaPropostaFinanciamentoVeiculoPasso2DadosPessoais>
+	</soapenv:Body>
+</soapenv:Envelope>
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<dlwmin:enviaPropostaFinanciamentoVeiculoPasso2DadosPessoaisResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/">
+			<dadosPessoaisResponse>
+				<codigoErro></codigoErro>
+				<codigoRetorno>00</codigoRetorno>
+				<descricaoErro></descricaoErro>
+				<dadosPessoais>
+					<numeroInternoCliente>00000001</numeroInternoCliente>
+				</dadosPessoais>
+			</dadosPessoaisResponse>
+		</dlwmin:enviaPropostaFinanciamentoVeiculoPasso2DadosPessoaisResponse>
+	</soapenv:Body>
+</soapenv:Envelope><?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/">
+	<soapenv:Header>
+		<token:security xmlns:token="http://santander-fo">
+			<username xmlns="">madeireira</username>
+			<key xmlns="">89564B999337A671</key>
+			<cnpj xmlns="">03875890000173</cnpj>
+			<codigoGrupoCanal xmlns="">0008.001</codigoGrupoCanal>
+			<numeroIntermediario xmlns="">198710</numeroIntermediario>
+		</token:security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<impl:enviaPropostaFinanciamentoVeiculoPasso3Endereco xmlns:impl="http://santander-fo">
+			<chamada xmlns="">
+				<numeroPropostaAdp xmlns="">0042420681</numeroPropostaAdp>
+				<numeroClienteInterno xmlns="">00000001</numeroClienteInterno>
+				<codigoEnderecoCorrespondencia xmlns="">R</codigoEnderecoCorrespondencia>
+				<codigoPaisComercial xmlns="">BR</codigoPaisComercial>
+				<codigoPaisResidencial xmlns="">BR</codigoPaisResidencial>
+				<codigoSiglaUfComercial xmlns="">AC</codigoSiglaUfComercial>
+				<codigoSiglaUfResidencial xmlns="">AC</codigoSiglaUfResidencial>
+				<dataAnoResideDesde xmlns="">1994</dataAnoResideDesde>
+				<dataMesResideDesde xmlns="">06</dataMesResideDesde>
+				<descricaoComplementoEndComercial xmlns="">CJ. 11</descricaoComplementoEndComercial>
+				<descricaoComplementoResidencia xmlns="">CJ. 11</descricaoComplementoResidencia>
+				<descricaoEnderecoComercial xmlns="">Rua Pernambuco</descricaoEnderecoComercial>
+				<descricaoEnderecoResidencia xmlns="">Rua Pernambuco</descricaoEnderecoResidencia>
+				<descricaoEnderecoEmail xmlns="">teste@teste.com</descricaoEnderecoEmail>
+				<descricaoTelComercial xmlns="">74652221</descricaoTelComercial>
+				<descricaotelResidencial xmlns="">74652221</descricaotelResidencial>
+				<nomeBairroComercial xmlns="">Dom Giocondo</nomeBairroComercial>
+				<nomeBairroResidencial xmlns="">Dom Giocondo</nomeBairroResidencial>
+				<nomeCidadeComercial xmlns="">Rio Branco</nomeCidadeComercial>
+				<nomeCidadeResidencial xmlns="">Rio Branco</nomeCidadeResidencial>
+				<numeroCepComercial xmlns="">69900306</numeroCepComercial>
+				<numeroCepResidencial xmlns="">69900306</numeroCepResidencial>
+				<numeroDddCel xmlns="">11</numeroDddCel>
+				<numeroDddResidencial xmlns="">11</numeroDddResidencial>
+				<numeroDddTelComercial xmlns="">11</numeroDddTelComercial>
+				<numeroEnderecoComercial xmlns="">158</numeroEnderecoComercial>
+				<numeroResidencial xmlns="">1893</numeroResidencial>
+				<numeroTipoResidencia xmlns="">1</numeroTipoResidencia>
+				<numeroTipoTelefResiden xmlns="">1</numeroTipoTelefResiden>
+			</chamada>
+		</impl:enviaPropostaFinanciamentoVeiculoPasso3Endereco>
+	</soapenv:Body>
+</soapenv:Envelope>
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<dlwmin:enviaPropostaFinanciamentoVeiculoPasso3EnderecoResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/">
+			<insereEnderecoResponse>
+				<codigoErro></codigoErro>
+				<codigoRetorno>00</codigoRetorno>
+				<descricaoErro></descricaoErro>
+			</insereEnderecoResponse>
+		</dlwmin:enviaPropostaFinanciamentoVeiculoPasso3EnderecoResponse>
+	</soapenv:Body>
+</soapenv:Envelope>ok<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/">
+	<soapenv:Header>
+		<token:security xmlns:token="http://santander-fo">
+			<username xmlns="">madeireira</username>
+			<key xmlns="">89564B999337A671</key>
+			<cnpj xmlns="">03875890000173</cnpj>
+			<codigoGrupoCanal xmlns="">0008.001</codigoGrupoCanal>
+			<numeroIntermediario xmlns="">198710</numeroIntermediario>
+		</token:security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<impl:enviaPropostaFinanciamentoVeiculoPasso4Referencias xmlns:impl="http://santander-fo">
+			<chamada xmlns="">
+				<numeroPropostaAdp xmlns="">0042420681</numeroPropostaAdp>
+				<numeroClienteInterno xmlns="">00000001</numeroClienteInterno>
+				<numeroClienteRelacional xmlns="">00000001</numeroClienteRelacional>
+				<codigoDigitoAgencia xmlns="">0</codigoDigitoAgencia>
+				<codigoDigitoContaCorrente xmlns="">8</codigoDigitoContaCorrente>
+				<codigoTipoContaBancaria xmlns="">C</codigoTipoContaBancaria>
+				<descricaoTelefoneBanco xmlns="">99999999</descricaoTelefoneBanco>
+				<descricaoTelefoneRefer1 xmlns="">99999999</descricaoTelefoneRefer1>
+				<descricaoTelefoneRefer2 xmlns="">99999999</descricaoTelefoneRefer2>
+				<nomeRefer1 xmlns="">Referencia Teste Dois</nomeRefer1>
+				<nomeRefer2 xmlns="">Referencia Teste Dois</nomeRefer2>
+				<numeroAgencia xmlns="">043</numeroAgencia>
+				<numeroAnoClienteDesde xmlns="">2014</numeroAnoClienteDesde>
+				<numeroBanco xmlns="">033</numeroBanco>
+				<numeroContaCorrente xmlns="">10103359</numeroContaCorrente>
+				<numeroDddRefer1 xmlns="">99</numeroDddRefer1>
+				<numeroDddRefer2 xmlns="">99</numeroDddRefer2>
+				<numeroDddTelefoneBanco xmlns="">99</numeroDddTelefoneBanco>
+				<numeroMesClienteDesde xmlns="">02</numeroMesClienteDesde>
+			</chamada>
+		</impl:enviaPropostaFinanciamentoVeiculoPasso4Referencias>
+	</soapenv:Body>
+</soapenv:Envelope>
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<dlwmin:enviaPropostaFinanciamentoVeiculoPasso4ReferenciasResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/">
+			<insereReferenciaResponse>
+				<codigoErro></codigoErro>
+				<codigoRetorno>00</codigoRetorno>
+				<descricaoErro></descricaoErro>
+			</insereReferenciaResponse>
+		</dlwmin:enviaPropostaFinanciamentoVeiculoPasso4ReferenciasResponse>
+	</soapenv:Body>
+</soapenv:Envelope>ok<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/">
+	<soapenv:Header>
+		<token:security xmlns:token="http://santander-fo">
+			<username xmlns="">madeireira</username>
+			<key xmlns="">89564B999337A671</key>
+			<cnpj xmlns="">03875890000173</cnpj>
+			<codigoGrupoCanal xmlns="">0008.001</codigoGrupoCanal>
+			<numeroIntermediario xmlns="">198710</numeroIntermediario>
+		</token:security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<impl:enviaPropostaFinanciamentoVeiculoPasso5Garantias xmlns:impl="http://santander-fo">
+			<chamada xmlns="">
+				<numeroProposta xmlns="">0042420681</numeroProposta>
+				<codigoGarantia xmlns="">01</codigoGarantia>
+				<codigoObjFinanciado xmlns="">VN</codigoObjFinanciado>
+				<descricaoModelo xmlns="">TIPO OBJETO FINANCIADO</descricaoModelo>
+			</chamada>
+		</impl:enviaPropostaFinanciamentoVeiculoPasso5Garantias>
+	</soapenv:Body>
+</soapenv:Envelope>
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<dlwmin:enviaPropostaFinanciamentoVeiculoPasso5GarantiasResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/">
+			<insereGarantiaResponse>
+				<codigoErro></codigoErro>
+				<codigoRetorno>00</codigoRetorno>
+				<descricaoErro></descricaoErro>
+			</insereGarantiaResponse>
+		</dlwmin:enviaPropostaFinanciamentoVeiculoPasso5GarantiasResponse>
+	</soapenv:Body>
+</soapenv:Envelope>ok<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/">
+	<soapenv:Header>
+		<token:security xmlns:token="http://santander-fo">
+			<username xmlns="">madeireira</username>
+			<key xmlns="">89564B999337A671</key>
+			<cnpj xmlns="">03875890000173</cnpj>
+			<codigoGrupoCanal xmlns="">0008.001</codigoGrupoCanal>
+			<numeroIntermediario xmlns="">198710</numeroIntermediario>
+		</token:security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<impl:enviaPropostaFinanciamentoVeiculoPasso6Fim xmlns:impl="http://santander-fo">
+			<chamada xmlns="">
+				<numeroPropostaAdp xmlns="">0042420681</numeroPropostaAdp>
+				<numeroIntermediario xmlns="">198710</numeroIntermediario>
+			</chamada>
+		</impl:enviaPropostaFinanciamentoVeiculoPasso6Fim>
+	</soapenv:Body>
+</soapenv:Envelope>
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<dlwmin:enviaPropostaFinanciamentoVeiculoPasso6FimResponse xmlns:dlwmin="http://impl.webservice.afc.app.bsbr.altec.com/">
+			<dadosAdpResponse>
+				<codigoErro>@ERVJE0050</codigoErro>
+				<codigoRetorno>20</codigoRetorno>
+				<descricaoErro>ERRO ROTINA - PROPOSTA COM AGENCIA  ZERADA</descricaoErro>
+				<dadosAdp></dadosAdp>
+			</dadosAdpResponse>
+		</dlwmin:enviaPropostaFinanciamentoVeiculoPasso6FimResponse>
+	</soapenv:Body>
+</soapenv:Envelope>
