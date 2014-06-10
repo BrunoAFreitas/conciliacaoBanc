@@ -129,7 +129,6 @@ class consultarFinanceira extends crud {
 		$cliente = $this -> clienteBD;
 		$numeroPropostaAdp = $criarProposta;// este codigo vem do primeiro passo
 
-		
 		$numeroTipoVinculoPart    = "1";
 		$codigoDocumento          = $cliente['cli_inscrg'];//20d
 		$codigoEstadoNaturalidade = $cliente['cli_estado'];//2d
@@ -168,7 +167,7 @@ class consultarFinanceira extends crud {
 		$nomeEmpresa = $cliente['cli_razao'];//60d
 		$codigoSedePropria = $cliente['cli_sedepropria'];//1d
 
-			$interveniente = new criarInterveniente($numeroTipoVinculoPart,$numeroPropostaAdp, $codigoDocumento, $codigoEstadoNaturalidade, $codigoEstadoOrgaoEmissor, 
+			$interveniente = new criarInterveniente($numeroTipoVinculoPart, $numeroPropostaAdp, $codigoDocumento, $codigoEstadoNaturalidade, $codigoEstadoOrgaoEmissor, 
 													$codigoNacionalidade, $codigoPaisDocumento,  $codigoSexo, 
 													$codigoTipoPessoa, $dataAdmissao, $dataEmissaoDocumento, $dataNascimento, 
 													$descricaoNaturalidade, $descricaoProfissao,  
