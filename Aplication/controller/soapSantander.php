@@ -91,6 +91,7 @@ class clsSantanderSoap {
 		$this->_xml = $xml->asXML();
 
 	}
+
 	public function xmlToObject() {
 
 		$xml = simplexml_load_string($this -> _xmlResposta);
@@ -98,6 +99,7 @@ class clsSantanderSoap {
 
 		return $xml;
 	}
+
 	public function toArray($buscar = null, $xml = null) {
 
 		$XML = $xml ? $xml : $this -> _xmlResposta;
@@ -183,6 +185,5 @@ class clsSantanderSoap {
 		}
 		return $xml_array;
 	}
-
 }
 ?>
