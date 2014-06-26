@@ -1,10 +1,13 @@
 <?php
+/**
+ * Arquivo atualizado pela equipe de desenvolvimento santander
+ */
 class clsSantanderSoap {
 
 	protected $parametro = array();
 	protected $_xml, $username, $key, $cnpj, $codigoGrupoCanal, $numeroIntermediario;
 	protected $implementacao, $_xmlResposta = "";
-
+	
 	public function __construct($username, $key, $cnpj, $codigoGrupoCanal, $numeroIntermediario) {
 
 		$this -> username = $username;
@@ -56,20 +59,26 @@ class clsSantanderSoap {
 		// Usar compressao
 
 		// Executa a requisição
-		$this -> _xmlResposta = curl_exec($ch);
-		//$this->_xmlResposta = curl_exec($ch);
-
-
+		//echo $this -> _xmlResposta = curl_exec($ch);
+		$this->_xmlResposta = curl_exec($ch);
 
 		if (curl_errno($ch)) {
 			echo "Error: ",  curl_error($ch);
 			exit();
 		}
+		
+		//echo $endereco_wsdl;
+		//echo '<hr>';
+		//echo $this -> _xml;
+		//echo '<hr>';
+		//echo $this->_xmlResposta;exit();
+		 //echo '<hr>';
 
 	}
 
 	public function criaXML() {
-
+		global $_metodo;
+		
 		$xml = new SimpleXMLElement('<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/"></soapenv:Envelope>');
 		$header = $xml -> addChild("Header");
 		$token = $header -> addChild('token:security', "", "http://santander-fo");
@@ -81,8 +90,8 @@ class clsSantanderSoap {
 
 		$body = $xml -> addChild("Body");
 		$implement = $body -> addChild('impl:' . $this -> implementacao, null, "http://santander-fo");
-		$chamada = $implement -> addChild('chamada', "", "");
-
+		$chamada = $implement -> addChild($_metodo[$this -> implementacao] ? $_metodo[$this -> implementacao] : "request", "", "");
+		 
 		while (list($key, $val) = each($this -> parametro)) :
 			$chamada -> addChild($key, $val, "");
 		endwhile;
@@ -91,7 +100,6 @@ class clsSantanderSoap {
 		$this->_xml = $xml->asXML();
 
 	}
-
 	public function xmlToObject() {
 
 		$xml = simplexml_load_string($this -> _xmlResposta);
@@ -99,7 +107,6 @@ class clsSantanderSoap {
 
 		return $xml;
 	}
-
 	public function toArray($buscar = null, $xml = null) {
 
 		$XML = $xml ? $xml : $this -> _xmlResposta;
@@ -185,5 +192,6 @@ class clsSantanderSoap {
 		}
 		return $xml_array;
 	}
+
 }
 ?>

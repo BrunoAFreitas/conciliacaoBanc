@@ -150,7 +150,7 @@ class consultarFinanceira extends crud {
 		$nomePai    			  = $cliente['cli_pai'];//60d
 		//$numeroCnpjEmpresa        = $cliente['cli_cgccpf'];//15d
 		$numeroComprovanteRenda   = $cliente['cli_tpcomprenda'];//xx
-		$numeroCpfCnpj            = "300.300.300-30";//$cliente['cli_cgccpf'];//11d
+		$numeroCpfCnpj            = "057.548.533-78";//$cliente['cli_cgccpf'];//11d
 		$numeroDependentes        = $cliente['cli_qtdfilhos'];//3d
 		$numeroEstadoCivil        = $cliente['cli_estadocivil'];//2d
 		$numeroProfissao          = $cliente['cli_profissaocod'];//5d
