@@ -2,7 +2,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="../viewpedidovenda/estilo_css/estili_cad.css" />
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script type="text/javascript" src="refresh/refreshAjax.js"></script>
+
 	<script type="text/javascript" src="menu/ajax-menu.files/dmenu.js"></script>
 	<style type="text/css">
 			#deluxeMenu {
@@ -14,7 +14,7 @@
 	</noscript>
 </head>
 <budy onload="habilita();">
-<form name="form" id = "form" >
+<form name="form" id = "form" action = "../model/teste.php">
 <fieldset>
 
 	<legend align="center">

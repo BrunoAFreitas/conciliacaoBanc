@@ -2,7 +2,6 @@
 /**
  * Classe que realiza operações no banco, efetuando inserts, selects, updates, deletes etc
  * @package Controller
- * @name    Crud
  * @access  Abstract
  */
 
