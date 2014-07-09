@@ -43,7 +43,7 @@ class clsSantanderSoap {
 		// Modo Verbose, para exibir o processo na tela
 		curl_setopt($ch, CURLOPT_HEADER, false);
 		// Se precisar de retorno dos cabeçalhos
-		curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 50);
 		// Tempo máximo em segundos que deve esperar responder
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $cabecalho);
 		// Cabecalho para ser enviado
@@ -96,7 +96,7 @@ class clsSantanderSoap {
 			$chamada -> addChild($key, $val, "");
 		endwhile;
  
-		//echo $this -> _xml = $xml -> asXML();
+		echo $this -> _xml = $xml -> asXML();
 		$this->_xml = $xml->asXML();
 
 	}

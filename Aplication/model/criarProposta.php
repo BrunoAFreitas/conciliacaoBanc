@@ -22,8 +22,8 @@ class criarProposta extends carregaMetodo {
 	}
 
 	protected function getDados() {
-	//	echo "<pre>";
-	//	print_r($this -> campos);
+		echo "<pre>";
+		print_r($this -> campos);
 		$this -> soapSantander -> setStrImplementacao("enviaPropostaFinanciamentoVeiculoPasso1Inicio");
 		while (list($key, $val) = each($this -> campos)) {
 			 $this -> soapSantander -> setParametro($key, $val);
@@ -31,7 +31,11 @@ class criarProposta extends carregaMetodo {
 		
 		$this -> soapSantander -> setParametro("numeroIntermediario", numeroIntermediario);
 		$this -> soapSantander -> consomeWebService(enderecoEndPointProposta);
-		//$this -> trataRetorno(); 
+		$this -> trataRetorno(); 
+		echo "</br>";
+		echo $this -> descricaoErro;
+		echo $this -> codigoRetorno;
+
 	}
 
 	protected function trataRetorno() {

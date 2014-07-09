@@ -3,6 +3,7 @@
  * A classe consultarFinanceira e reponsavel por criar e acoplar os 6 passos do financiamento
  * Execultando um atraz do outro sempre que não cair em exection. 
  */
+include_once("../controller/GlobalConstants.php");
 include_once("../model/imprimeCETPDF.php");
 // para a conexao com o banco de dado do gercom 
 include_once("../controller/crud.php");
@@ -60,7 +61,7 @@ class consultarFinanceira extends crud {
 	 * Consulta campos de cliente para preencimento dos passos para financiamento.
 	 */
 	public function cliente(){
-		$cliente = mysql_fetch_array(self::ListaTable('*','clientes',"cli_cgccpf = '". $this->idCliente ."'"));
+		$cliente = mysql_fetch_array(self::ListaTable('*','clientes',"cli_cgccpf = '". $this->idCliente ."'")) or die ("Erro na consulta pelo cliente.");
 		return $cliente;	
 	}
 
@@ -89,6 +90,7 @@ class consultarFinanceira extends crud {
 			return $conta[1];
 		}
 	}
+
 	
 	// Criar proposta (passo 1)
 	public function passo1( $codigoFormaPagamento , $dataEntregaBem            , $codigoTipoMoeda, 
@@ -150,7 +152,7 @@ class consultarFinanceira extends crud {
 		$nomePai    			  = $cliente['cli_pai'];//60d
 		//$numeroCnpjEmpresa        = $cliente['cli_cgccpf'];//15d
 		$numeroComprovanteRenda   = $cliente['cli_tpcomprenda'];//xx
-		$numeroCpfCnpj            = "057.548.533-78";//$cliente['cli_cgccpf'];//11d
+		$numeroCpfCnpj            = $cliente['cli_cgccpf'];//11d
 		$numeroDependentes        = $cliente['cli_qtdfilhos'];//3d
 		$numeroEstadoCivil        = $cliente['cli_estadocivil'];//2d
 		$numeroProfissao          = $cliente['cli_profissaocod'];//5d
@@ -246,7 +248,7 @@ class consultarFinanceira extends crud {
 		
 		if($endereco->codigoRetorno == "00") {
 			// ok pode ir para o proximo passo
-			//echo "ok";
+			echo "ok";
 		} else {
 			// algo deu errado verificar dados
 			echo "<br/>";
@@ -255,8 +257,10 @@ class consultarFinanceira extends crud {
 	}
 
 	// associa referencia (passo 4) pessoal bancaria
+
 	public function passo4($numeroProposta) {
 		$numeroPropostaAdp = $numeroProposta;   // dados obtido no primeiro passo2
+	
 		
 		$cliente = $this -> clienteBD;
 		$dddref1 = $this -> extrairDDD($cliente['cli_telref1']);
@@ -294,7 +298,7 @@ class consultarFinanceira extends crud {
 		$referencia->executa(); 
 		
 		if($referencia->codigoRetorno == "00") {
-			//echo "ok";
+			echo "ok";
 		} else {
 			echo "<br/>";
 			echo $referencia->descricaoErro;
@@ -316,7 +320,7 @@ class consultarFinanceira extends crud {
 		
 		
 		if($garantia->codigoRetorno == "00") {
-			//echo "ok";
+			echo "ok";
 		} else {
 			echo "<br/>";
 			echo $garantia->descricaoErro;
@@ -335,14 +339,14 @@ class consultarFinanceira extends crud {
 		$consolidar -> executa();
 
 		
-		//echo  $consolidar -> dadosADP -> descricaoCor;
-		//print_r( $consolidar -> dadosADP );
+		echo  $consolidar -> dadosADP -> descricaoCor;
+		print_r( $consolidar -> dadosADP );
 		
 		echo $retorno = $consolidar -> dadosADP -> descricaoMensagemRetorno1;
 		//echo "<script>alert('$retorno');</script>";
 		
 		if( $consolidar -> codigoRetorno == "00" ) {
-			//echo "ok"; 
+			echo "ok"; 
 		} else { 
 			echo $consolidar -> descricaoErro;
 		}

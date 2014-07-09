@@ -57,7 +57,7 @@
 		<td>CPF/CNPJ cliente:<br/><input name="cpf" id="cpf" type="text"  class="campo"></td>
 	</tr>
 	<center>
-		<td><input type ="submit" value ="Enviar Proposta" style ="border:none; height:36; width:120; color:red " onClick ="submit_action('../model/teste.php');"/></td>
+		<td><input type ="submit" value ="Enviar Proposta" style ="border:none; height:36; width:120; color:red "/></td>
 	</center>
 	</tr>
 </table></center>

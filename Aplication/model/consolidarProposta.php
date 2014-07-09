@@ -1,4 +1,4 @@
-<?
+<?php
 
 include_once ('../controller/GlobalConstants.php');
 include_once ('../controller/soapSantander.php');
@@ -14,8 +14,8 @@ class consolidarProposta extends carregaMetodo {
 	}
 	
 	protected function getDados() {
-		//echo "<pre>";
-		//print_r($this -> campos);
+		echo "<pre>";
+		print_r($this -> campos);
 		
 		
 

@@ -14,8 +14,8 @@ class associarEnderecoInterveniente extends carregaMetodo {
 	}
 
 	protected function getDados() {
-		//echo "<pre>";
-		//print_r($this -> campos);
+		echo "<pre>";
+		print_r($this -> campos);
 		$this -> soapSantander -> setStrImplementacao("enviaPropostaFinanciamentoVeiculoPasso3Endereco");
 		while (list($key, $val) = each($this -> campos)) {  $this -> soapSantander -> setParametro($key, $val);
 		}
