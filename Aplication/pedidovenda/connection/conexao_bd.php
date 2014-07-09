@@ -18,10 +18,6 @@ $login = "root";
 $senha = "";
 $banco = "gercomweb";
 
-//$porta = "91.194.91.10";
-//$login = "dgercom";
-//$senha = "2012ruah2012";
-//$banco = "dgercom";
 
 //conexão com o servidor
 $conexao = mysql_connect($porta, $login, $senha);
