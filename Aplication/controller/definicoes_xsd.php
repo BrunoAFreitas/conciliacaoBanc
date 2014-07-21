@@ -1,5 +1,7 @@
 <?php
 
+ 
+    //definicoes atravez de variaveis globais. (usado atualmente)
     $_metodo[buscaPrazoParcelasFlex] = "buscaPrazoParcelasFlexRequest";
     $_metodo[consultaDisponibilidadeCanal] = "canalRequest";
     $_metodo[consultaElegibilidadeFinanciamentoVeiculo] = "elegibilidadeRequest";

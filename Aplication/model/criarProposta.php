@@ -32,9 +32,7 @@ class criarProposta extends carregaMetodo {
 		$this -> soapSantander -> setParametro("numeroIntermediario", numeroIntermediario);
 		$this -> soapSantander -> consomeWebService(enderecoEndPointProposta);
 		$this -> trataRetorno(); 
-		echo "</br>";
-		echo $this -> descricaoErro;
-		echo $this -> codigoRetorno;
+
 
 	}
 

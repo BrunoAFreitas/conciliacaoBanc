@@ -111,6 +111,7 @@ class consultarFinanceira extends crud {
 											$valorEntrada         , $valorFinanciamento        , $valorPrestacao, 
 											$dataVencimento1);
 		$criarProposta -> executa();
+		echo "ERRO --(".$criarProposta -> descricaoErro.") Codigo de retorno-(".$criarProposta->codigoRetorno.")";
 		
 	
 		// variavel que sera usado em todos os passos
@@ -152,7 +153,7 @@ class consultarFinanceira extends crud {
 		$nomePai    			  = $cliente['cli_pai'];//60d
 		//$numeroCnpjEmpresa        = $cliente['cli_cgccpf'];//15d
 		$numeroComprovanteRenda   = $cliente['cli_tpcomprenda'];//xx
-		$numeroCpfCnpj            = $cliente['cli_cgccpf'];//11d
+		$numeroCpfCnpj            ="300.300.300-30";// $cliente['cli_cgccpf'];//11d
 		$numeroDependentes        = $cliente['cli_qtdfilhos'];//3d
 		$numeroEstadoCivil        = $cliente['cli_estadocivil'];//2d
 		$numeroProfissao          = $cliente['cli_profissaocod'];//5d
@@ -181,6 +182,8 @@ class consultarFinanceira extends crud {
 		
 
 		$interveniente -> executa();
+
+		echo "ERRO ---(".$interveniente -> descricaoErro.")";
 		// criando o numero do passo dois
 		$this -> nrInterveniente = $interveniente -> numeroInternoCliente;
 		// mostrando a msg de retorno

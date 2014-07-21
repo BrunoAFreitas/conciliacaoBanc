@@ -78,7 +78,6 @@ class clsSantanderSoap {
 
 	public function criaXML() {
 		global $_metodo;
-		
 		$xml = new SimpleXMLElement('<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.webservice.afc.app.bsbr.altec.com/"></soapenv:Envelope>');
 		$header = $xml -> addChild("Header");
 		$token = $header -> addChild('token:security', "", "http://santander-fo");
@@ -90,8 +89,9 @@ class clsSantanderSoap {
 
 		$body = $xml -> addChild("Body");
 		$implement = $body -> addChild('impl:' . $this -> implementacao, null, "http://santander-fo");
-		$chamada = $implement -> addChild($_metodo[$this -> implementacao] ? $_metodo[$this -> implementacao] : "request", "", "");
-		 
+		$implementacao = $_metodo[$this -> implementacao] ? $_metodo[$this -> implementacao] : "request";
+		$chamada = $implement -> addChild($implementacao, "", "");
+ 
 		while (list($key, $val) = each($this -> parametro)) :
 			$chamada -> addChild($key, $val, "");
 		endwhile;

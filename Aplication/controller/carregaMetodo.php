@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * CARREGA METODO
+ * 
+ * CLASSE PACOTE CONTROLLER
+*/
 class carregaMetodo {
 
 	protected $userName, $token, $cnpj, $cogidoGrupoCanal, $nrIntermediario;
