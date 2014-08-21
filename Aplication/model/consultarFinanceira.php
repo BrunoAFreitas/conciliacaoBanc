@@ -121,6 +121,9 @@ class consultarFinanceira extends crud {
 		// o retorno desse metodo tera que ser usado em todos os outros passos
 		// para relacionar as informacaoes inseridas nos demais passos
 		
+		//inserir dados da proposta
+		self::insert("prop_num, prop_valorbem, prop_qtdparcelas, prop_valorfinanciado, prop_valorparcela", "propostas_financeiras", "$this->numeroProposta, $valorBem,$numeroQuantidadePrestacoes,$valorFinanciamento,$valorPrestacao" )or die("Erro ao gravar dados da proposta 1");
+
 		// iniciando o passo dois e passando o numero da proposta
 		$this -> passo2($this -> numeroProposta);
 		
@@ -189,7 +192,8 @@ class consultarFinanceira extends crud {
 		// mostrando a msg de retorno
 		$this -> setMensage($this -> nrInterveniente);
 		// retorno codigo de cliente avalista que foi incluido
-		
+		self::update("propostas_financeiras", "prop_cgccpf ='". $numeroCpfCnpj."'", "prop_num = ".$this -> numeroProposta);
+
 		// chmando passo quatro		
 		$this -> passo3($this -> numeroProposta);
 		$this -> passo4($this -> numeroProposta);
@@ -342,12 +346,13 @@ class consultarFinanceira extends crud {
 		$consolidar -> executa();
 
 		
-		echo  $consolidar -> dadosADP -> descricaoCor;
+		$status =  $consolidar -> dadosADP -> numeroStatusProposta;
 		print_r( $consolidar -> dadosADP );
 		
 		echo $retorno = $consolidar -> dadosADP -> descricaoMensagemRetorno1;
-		//echo "<script>alert('$retorno');</script>";
-		
+		echo "<script>alert('$retorno');</script>";
+		self::update("propostas_financeiras", "prop_status ='". $status."', prop_data = '".date('Y-m-d')."', prop_hora = '".date('H:m:s')."'", "prop_num = $numeroPropostaAdp");
+
 		if( $consolidar -> codigoRetorno == "00" ) {
 			echo "ok"; 
 		} else { 
